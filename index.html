@@ -83,19 +83,24 @@ h1,h2,h3,h4{font-family:'Playfair Display',Georgia,serif;font-weight:600;letter-
 .nav-overlay.open{display:flex}
 .nav-overlay a{font-family:'EB Garamond',serif;font-size:1.6rem;font-weight:600;color:var(--ink)}
 
-/* Hero — Editorial Split */
-.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;padding-top:72px}
-.hero-left{background:var(--primary);color:#fff;padding:5rem 5% 4rem;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden}
-.hero-left::before{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.55 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");opacity:.18;pointer-events:none;mix-blend-mode:overlay}
-.hero-left::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 30% 50%,rgba(255,255,255,.08),transparent 55%);pointer-events:none;animation:heroAmbient 9s ease-in-out infinite}
-@keyframes heroAmbient{0%,100%{opacity:.6;transform:scale(1)}50%{opacity:1;transform:scale(1.1)}}
-.hero-content{position:relative;z-index:2}
-.hero-logo{display:block;width:100%;max-width:640px;height:auto;margin:0 auto 2.4rem;filter:drop-shadow(0 0 60px rgba(0,0,0,.35));opacity:0;transform:scale(.94);animation:heroLogoIn 1.1s cubic-bezier(.2,.8,.2,1) .15s forwards}
+/* Hero — Stacked: family photo banner over red brand strip */
+.hero{display:grid;grid-template-rows:1fr auto;min-height:100vh;padding-top:72px}
+.hero-photo-banner{position:relative;overflow:hidden;background:var(--ink);min-height:55vh}
+.hero-photo{position:absolute;inset:0;background-image:url('family.jpg');background-size:cover;background-position:center 35%;animation:kenBurns 32s ease-in-out infinite alternate}
+.hero-photo::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 65%,rgba(14,14,14,.18) 100%)}
+@keyframes kenBurns{0%{transform:scale(1) translate(0,0)}100%{transform:scale(1.06) translate(-1%,-.5%)}}
+.hero-brand{background:var(--primary);color:#fff;padding:3rem 5%;display:grid;grid-template-columns:auto 1fr auto;gap:3rem;align-items:center;position:relative;overflow:hidden}
+.hero-brand::before{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.55 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");opacity:.16;pointer-events:none;mix-blend-mode:overlay}
+.hero-brand::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%,rgba(255,255,255,.08),transparent 60%);pointer-events:none;animation:heroAmbient 9s ease-in-out infinite}
+@keyframes heroAmbient{0%,100%{opacity:.55}50%{opacity:1}}
+.hero-content{position:relative;z-index:2;display:contents}
+.hero-logo{display:block;max-width:280px;width:100%;height:auto;filter:drop-shadow(0 6px 24px rgba(0,0,0,.45));opacity:0;transform:scale(.94);animation:heroLogoIn 1.1s cubic-bezier(.2,.8,.2,1) .15s forwards;position:relative;z-index:2}
 @keyframes heroLogoIn{to{opacity:1;transform:scale(1)}}
-.hero-sub{font-family:'Playfair Display',serif;font-style:italic;font-weight:400;font-size:1.5rem;line-height:1.4;max-width:30rem;margin-bottom:2.6rem;color:#fff;opacity:0;transform:translateY(10px);animation:heroFadeUp .8s ease .55s forwards}
-.hero-meta{font-family:'Inter',sans-serif;letter-spacing:.22em;font-size:.74rem;font-weight:600;margin-bottom:2.4rem;opacity:0;transform:translateY(10px);animation:heroFadeUp .8s ease .8s forwards;text-transform:uppercase}
-.hero-meta span{margin:0 .8rem;opacity:.55}
-.hero-ctas{opacity:0;transform:translateY(10px);animation:heroFadeUp .8s ease 1.05s forwards}
+.hero-text{position:relative;z-index:2;opacity:0;transform:translateY(10px);animation:heroFadeUp .8s ease .55s forwards}
+.hero-sub{font-family:'Playfair Display',serif;font-style:italic;font-weight:400;font-size:clamp(1.1rem,1.6vw,1.45rem);line-height:1.4;max-width:32rem;color:#fff;margin-bottom:.8rem}
+.hero-meta{font-family:'Inter',sans-serif;letter-spacing:.22em;font-size:.7rem;font-weight:600;text-transform:uppercase;opacity:.85}
+.hero-meta span{margin:0 .7rem;opacity:.55}
+.hero-ctas{position:relative;z-index:2;display:flex;gap:.8rem;opacity:0;transform:translateY(10px);animation:heroFadeUp .8s ease .85s forwards}
 @keyframes heroFadeUp{to{opacity:1;transform:translateY(0)}}
 .hero-ctas{display:flex;gap:1rem;flex-wrap:wrap}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:.7rem;padding:1.05rem 2rem;font-family:'Inter',sans-serif;font-weight:700;letter-spacing:.18em;text-transform:uppercase;font-size:.78rem;border-radius:1px;transition:transform .25s ease,background .25s ease,color .25s ease,letter-spacing .3s ease;min-height:52px;cursor:pointer;border:none;position:relative;overflow:hidden}
@@ -105,11 +110,6 @@ h1,h2,h3,h4{font-family:'Playfair Display',Georgia,serif;font-weight:600;letter-
 .btn-primary:hover{background:var(--ink);color:#fff;letter-spacing:.22em}
 .btn-outline{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.6)}
 .btn-outline:hover{background:#fff;color:var(--primary);border-color:#fff;letter-spacing:.22em}
-
-.hero-right{position:relative;background:var(--bg-subtle);overflow:hidden}
-.hero-photo{position:absolute;inset:0;background-image:url('family.jpg');background-size:cover;background-position:center center;animation:kenBurns 32s ease-in-out infinite alternate}
-.hero-photo::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 70%,rgba(14,14,14,.18) 100%)}
-@keyframes kenBurns{0%{transform:scale(1) translate(0,0)}100%{transform:scale(1.07) translate(-1.5%,-1%)}}
 
 /* Section base */
 section{padding:8rem 5%}
@@ -148,9 +148,13 @@ section{padding:8rem 5%}
 .contrast-header{max-width:920px;margin:0 auto;text-align:center;position:relative;z-index:2}
 .contrast-header .section-eyebrow{justify-content:center;color:#fff;opacity:.75}
 .contrast-header .section-eyebrow::before{display:none}
-.contrast-header h2{font-family:'Playfair Display',serif;font-weight:600;font-size:clamp(2.6rem,6vw,4.8rem);margin:0 auto 1.4rem;letter-spacing:-0.025em;color:#fff;line-height:1.05;opacity:0;transform:translateY(14px);transition:opacity 1s ease .15s,transform 1s cubic-bezier(.2,.8,.2,1) .15s}
-.contrast.in .contrast-header h2{opacity:1;transform:translateY(0)}
-.contrast-header h2 em{font-style:italic;color:var(--primary);font-weight:500}
+.contrast-header h2{font-family:'Playfair Display',serif;margin:0 auto 1.6rem;color:#fff;display:flex;flex-direction:column;align-items:center;gap:.25em;line-height:.96}
+.contrast-header h2 .h2-line{display:block;opacity:0;transform:translateY(14px) scale(.96);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.9,.25,1.1)}
+.contrast-header h2 .h2-line-1{font-weight:600;font-size:clamp(2.2rem,5.4vw,4.2rem);letter-spacing:-0.025em;transition-delay:.15s}
+.contrast-header h2 .h2-line-2{font-style:italic;font-weight:700;color:var(--primary);font-size:clamp(2.8rem,7.4vw,6rem);letter-spacing:-0.035em;text-shadow:0 0 90px rgba(168,16,13,.55),0 0 30px rgba(168,16,13,.3);transition-delay:.55s;position:relative}
+.contrast.in .contrast-header h2 .h2-line{opacity:1;transform:translateY(0) scale(1)}
+.contrast-header h2 .h2-line-2::after{content:'';position:absolute;left:50%;bottom:-.18em;width:0;height:3px;background:var(--primary);transform:translateX(-50%);transition:width 1s cubic-bezier(.2,.8,.2,1) 1.4s}
+.contrast.in .contrast-header h2 .h2-line-2::after{width:38%}
 .contrast-header .section-eyebrow,.contrast-header .section-lede{opacity:0;transition:opacity .8s ease}
 .contrast.in .contrast-header .section-eyebrow{opacity:.85;transition-delay:0s}
 .contrast.in .contrast-header .section-lede{opacity:1;transition-delay:.4s}
@@ -295,9 +299,11 @@ footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(
 
 /* Mobile */
 @media (max-width:900px){
-  .hero{grid-template-columns:1fr;min-height:auto}
-  .hero-left{padding:5rem 6% 5.5rem;min-height:auto}
-  .hero-right{min-height:60vh}
+  .hero{min-height:auto}
+  .hero-photo-banner{min-height:48vh}
+  .hero-brand{grid-template-columns:1fr;gap:1.6rem;text-align:center;padding:2.5rem 6%;justify-items:center}
+  .hero-logo{max-width:240px}
+  .hero-ctas{justify-content:center;flex-wrap:wrap}
   .about-grid{grid-template-columns:1fr;gap:2.5rem}
   .about-img{display:none}
   .about-img-wrap::before{display:none}
@@ -371,21 +377,21 @@ footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(
 
 <!-- Hero -->
 <section class="hero" aria-label="Hero">
-  <div class="hero-left">
-    <div class="hero-content">
-      <img class="hero-logo" src="logo.png" alt="Tyler Haueter for Yakima County Prosecutor — Republican">
-      <h1 class="visually-hidden" style="position:absolute;left:-9999px">Tyler Haueter for Yakima County Prosecutor</h1>
+  <div class="hero-photo-banner" aria-hidden="true">
+    <div class="hero-photo"></div>
+  </div>
+  <div class="hero-brand">
+    <img class="hero-logo" src="logo.png" alt="Tyler Haueter for Yakima County Prosecutor — Republican">
+    <h1 class="visually-hidden" style="position:absolute;left:-9999px">Tyler Haueter for Yakima County Prosecutor</h1>
+    <div class="hero-text">
       <p class="hero-sub">Experience. Integrity. Justice — restored to the people of Yakima County.</p>
       <div class="hero-meta">PRIMARY · AUG 4, 2026<span>·</span>GENERAL · NOV 3, 2026</div>
-      <div class="hero-ctas">
-        <!-- TODO HANDOFF: real donate URL -->
-        <a href="#donate" class="btn btn-primary">Donate</a>
-        <a href="#volunteer" class="btn btn-outline">Volunteer</a>
-      </div>
     </div>
-  </div>
-  <div class="hero-right" aria-hidden="true">
-    <div class="hero-photo"></div>
+    <div class="hero-ctas">
+      <!-- TODO HANDOFF: real donate URL -->
+      <a href="#donate" class="btn btn-primary">Donate</a>
+      <a href="#volunteer" class="btn btn-outline">Volunteer</a>
+    </div>
   </div>
 </section>
 
@@ -417,7 +423,7 @@ footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(
 <section class="contrast" id="contrast">
   <div class="contrast-header">
     <div class="section-eyebrow">The Contrast</div>
-    <h2>Yakima needs a prosecutor. <em>Not a former one</em>.</h2>
+    <h2><span class="h2-line h2-line-1">Yakima needs a prosecutor.</span><span class="h2-line h2-line-2">Not a former one.</span></h2>
     <p class="section-lede">One candidate is in a courtroom today, prosecuting felonies. The other has not prosecuted a case in over a decade.</p>
   </div>
 
