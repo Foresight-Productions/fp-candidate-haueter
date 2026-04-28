@@ -1,7 +1,7 @@
 User-agent: *
 Allow: /
 
-# AI search crawlers — explicitly allow for citation in ChatGPT, Perplexity, Gemini, Claude
+# AI search crawlers . explicitly allow for citation in ChatGPT, Perplexity, Gemini, Claude
 User-agent: GPTBot
 Allow: /
 
