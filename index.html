@@ -11,10 +11,10 @@
 <meta property="og:url" content="https://foresight-productions.github.io/fp-candidate-haueter/">
 <meta property="og:title" content="Tyler Haueter for Yakima County Prosecutor · Republican · 2026">
 <meta property="og:description" content="Deputy Prosecuting Attorney Tyler Haueter is running for Yakima County Prosecutor to hold violent offenders accountable and protect crime victims.">
-<meta property="og:image" content="https://images.unsplash.com/photo-1589994965851-a8f479c573a9?w=1200&h=630&fit=crop&auto=format">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Tyler Haueter for Yakima County Prosecutor">
+<meta property="og:image" content="https://foresight-productions.github.io/fp-candidate-haueter/logo.png">
+<meta property="og:image:width" content="1500">
+<meta property="og:image:height" content="1000">
+<meta property="og:image:alt" content="Tyler Haueter for Yakima County Prosecutor — Republican">
 <meta property="og:site_name" content="Tyler Haueter for Yakima County Prosecutor">
 <meta property="og:locale" content="en_US">
 
@@ -22,7 +22,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Tyler Haueter for Yakima County Prosecutor · Republican · 2026">
 <meta name="twitter:description" content="Deputy Prosecuting Attorney running to hold violent offenders accountable.">
-<meta name="twitter:image" content="https://images.unsplash.com/photo-1589994965851-a8f479c573a9?w=1200&h=630&fit=crop&auto=format">
+<meta name="twitter:image" content="https://foresight-productions.github.io/fp-candidate-haueter/logo.png">
 
 <!--
 Design System
@@ -59,8 +59,8 @@ h1,h2,h3,h4{font-family:'EB Garamond',Georgia,serif;font-weight:600;letter-spaci
 /* Nav */
 #nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:0 5%;height:72px;background:rgba(255,255,255,0.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--rule);transition:box-shadow .2s ease}
 #nav.scrolled{box-shadow:0 4px 20px rgba(0,0,0,0.06)}
-.nav-logo{flex-shrink:0;font-family:'Oswald',sans-serif;font-weight:700;font-size:1.5rem;letter-spacing:.08em;color:var(--ink)}
-.nav-logo .accent{color:var(--primary)}
+.nav-logo{flex-shrink:0;display:flex;align-items:center}
+.nav-logo img{height:48px;width:auto;display:block}
 .nav-links{display:flex;align-items:center;gap:2.2rem;flex-shrink:0}
 .nav-links a{font-size:.92rem;font-weight:700;letter-spacing:.04em;color:var(--text);transition:color .15s ease}
 .nav-links a:hover{color:var(--primary)}
@@ -78,10 +78,7 @@ h1,h2,h3,h4{font-family:'EB Garamond',Georgia,serif;font-weight:600;letter-spaci
 /* Hero — Editorial Split */
 .hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;padding-top:72px}
 .hero-left{background:var(--primary);color:#fff;padding:5rem 5% 4rem;display:flex;flex-direction:column;justify-content:center;position:relative}
-.hero-left::before{content:'';position:absolute;top:5rem;left:5%;width:64px;height:4px;background:#fff}
-.hero-tag{font-family:'Oswald',sans-serif;font-weight:600;letter-spacing:.32em;font-size:.85rem;margin-bottom:1.4rem;opacity:.95}
-.hero-title{font-family:'EB Garamond',serif;color:#fff;font-size:clamp(3rem,6.4vw,5.6rem);font-weight:600;line-height:.98;margin-bottom:1.6rem;letter-spacing:-0.02em}
-.hero-title em{font-style:italic;font-weight:500}
+.hero-logo{display:block;width:100%;max-width:520px;height:auto;margin:0 0 2.2rem}
 .hero-sub{font-size:1.18rem;line-height:1.5;max-width:34rem;margin-bottom:2.4rem;opacity:.95}
 .hero-meta{font-family:'Oswald',sans-serif;letter-spacing:.18em;font-size:.82rem;font-weight:500;margin-bottom:2.4rem;opacity:.9}
 .hero-meta span{margin:0 .6rem}
@@ -93,10 +90,8 @@ h1,h2,h3,h4{font-family:'EB Garamond',Georgia,serif;font-weight:600;letter-spaci
 .btn-outline:hover{background:#fff;color:var(--primary);transform:translateY(-2px)}
 
 .hero-right{position:relative;background:var(--bg-subtle);overflow:hidden}
-/* TODO HANDOFF: Replace placeholder background with Tyler's real headshot — set background-image on .hero-right */
-.hero-photo{position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1589994965851-a8f479c573a9?w=1200&q=80&auto=format');background-size:cover;background-position:center 20%;filter:grayscale(.15)}
-.hero-photo::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(14,14,14,.25) 100%)}
-.photo-credit{position:absolute;bottom:1rem;right:1.2rem;font-size:.72rem;color:#fff;letter-spacing:.08em;background:rgba(0,0,0,.45);padding:.35rem .7rem;border-radius:2px;z-index:2}
+.hero-photo{position:absolute;inset:0;background-image:url('headshot.jpg');background-size:cover;background-position:center 25%}
+.hero-photo::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 70%,rgba(14,14,14,.15) 100%)}
 
 /* Section base */
 section{padding:7rem 5%}
@@ -107,7 +102,7 @@ section{padding:7rem 5%}
 /* About */
 .about{background:var(--bg-subtle)}
 .about-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
-.about-img{aspect-ratio:4/5;background:#ddd center/cover;background-image:url('https://images.unsplash.com/photo-1589216532372-1c2a367900d9?w=900&q=80&auto=format');border:1px solid var(--rule)}
+.about-img{aspect-ratio:4/5;background:#ddd center/cover;background-image:url('headshot.jpg');background-position:center 15%;border:1px solid var(--rule);box-shadow:0 18px 40px rgba(14,14,14,.12)}
 .about-copy p{margin-bottom:1.2rem;font-size:1.08rem;line-height:1.75}
 .pull-quote{border-left:3px solid var(--primary);padding:.4rem 0 .4rem 1.6rem;margin:2rem 0;font-family:'EB Garamond',serif;font-style:italic;font-size:1.45rem;line-height:1.4;color:var(--ink)}
 
@@ -200,7 +195,7 @@ footer{background:var(--ink);color:#fff;padding:3.5rem 5% 2rem}
 
 <!-- Nav -->
 <header id="nav">
-  <a href="#" class="nav-logo">HAUETER<span class="accent">.</span></a>
+  <a href="#" class="nav-logo" aria-label="Tyler Haueter for Yakima County Prosecutor"><img src="logo.png" alt="Tyler Haueter for Yakima County Prosecutor"></a>
   <div class="nav-links">
     <a href="#priorities">Priorities</a>
     <a href="#about">About</a>
@@ -224,9 +219,9 @@ footer{background:var(--ink);color:#fff;padding:3.5rem 5% 2rem}
 <!-- Hero -->
 <section class="hero" aria-label="Hero">
   <div class="hero-left">
-    <div class="hero-tag">Republican · Yakima County · 2026</div>
-    <h1 class="hero-title">Experience. Integrity. <em>Justice.</em></h1>
-    <p class="hero-sub">Tyler Haueter is running for Yakima County Prosecutor to hold violent offenders accountable, stand with crime victims, and restore public safety in our community.</p>
+    <img class="hero-logo" src="logo.png" alt="Tyler Haueter for Yakima County Prosecutor — Republican">
+    <h1 class="visually-hidden" style="position:absolute;left:-9999px">Tyler Haueter for Yakima County Prosecutor</h1>
+    <p class="hero-sub">Running to hold violent offenders accountable, stand with crime victims, and restore public safety in Yakima County.</p>
     <div class="hero-meta">PRIMARY · AUG 4, 2026<span>·</span>GENERAL · NOV 3, 2026</div>
     <div class="hero-ctas">
       <!-- TODO HANDOFF: real donate URL -->
@@ -235,9 +230,7 @@ footer{background:var(--ink);color:#fff;padding:3.5rem 5% 2rem}
     </div>
   </div>
   <div class="hero-right" aria-hidden="true">
-    <!-- TODO HANDOFF: replace .hero-photo background-image with Tyler's high-res headshot URL -->
     <div class="hero-photo"></div>
-    <span class="photo-credit">PLACEHOLDER · awaiting headshot</span>
   </div>
 </section>
 
