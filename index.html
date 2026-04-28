@@ -152,15 +152,18 @@ section{padding:8rem 5%}
 .year-block--haueter .year-num{color:#fff;text-shadow:0 0 60px rgba(168,16,13,.4)}
 .year-block--opp .year-label{color:rgba(255,255,255,.45)}
 .year-block--opp .year-num{color:rgba(255,255,255,.32);font-weight:400}
-.year-divider{width:1px;background:linear-gradient(180deg,transparent,rgba(255,255,255,.25) 30%,rgba(255,255,255,.25) 70%,transparent);height:140px;justify-self:center;margin:0 3rem;transform:scaleY(0);transform-origin:center;transition:transform 1s cubic-bezier(.2,.8,.2,1) .3s}
+.year-divider{width:1px;background:linear-gradient(180deg,transparent,rgba(255,255,255,.35) 25%,rgba(255,255,255,.35) 75%,transparent);height:220px;justify-self:center;margin:0 4rem;transform:scaleY(0);transform-origin:center;transition:transform 1s cubic-bezier(.2,.8,.2,1) .3s}
 .years-strip.in .year-divider{transform:scaleY(1)}
 
 /* Two-column credentials */
 .contrast-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:0;align-items:stretch;position:relative;z-index:2}
-.contrast-col{padding:2.6rem 3rem 0;display:flex;flex-direction:column;position:relative}
-.contrast-col--haueter{padding-left:0;border-right:1px solid rgba(255,255,255,.12)}
-.contrast-col--haueter::before{content:'';position:absolute;left:0;top:0;width:3px;height:60px;background:var(--primary)}
+.contrast-col{padding:3.4rem 3rem 0;display:flex;flex-direction:column;position:relative}
+.contrast-col::before{content:'';position:absolute;top:0;left:0;height:2px;width:72px;transition:width .6s cubic-bezier(.2,.8,.2,1) .4s}
+.contrast.in .contrast-col::before{width:72px}
+.contrast-col--haueter{padding-left:0;padding-right:3rem;border-right:1px solid rgba(255,255,255,.12)}
+.contrast-col--haueter::before{background:var(--primary);height:3px}
 .contrast-col--opp{padding-right:0;padding-left:3rem}
+.contrast-col--opp::before{background:rgba(255,255,255,.18)}
 .contrast-col-eyebrow{font-family:'Inter',sans-serif;font-weight:700;font-size:.72rem;letter-spacing:.36em;text-transform:uppercase;margin-bottom:1rem}
 .contrast-col--haueter .contrast-col-eyebrow{color:var(--primary)}
 .contrast-col--opp .contrast-col-eyebrow{color:rgba(255,255,255,.4)}
