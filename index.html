@@ -66,8 +66,8 @@ h1,h2,h3,h4{font-family:'Playfair Display',Georgia,serif;font-weight:600;letter-
 /* Nav */
 #nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:0 5%;height:72px;background:rgba(255,255,255,0.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--rule);transition:box-shadow .2s ease}
 #nav.scrolled{box-shadow:0 4px 20px rgba(0,0,0,0.06)}
-.nav-logo{flex-shrink:0;display:flex;align-items:center}
-.nav-logo img{height:48px;width:auto;display:block}
+.nav-logo{flex-shrink:0;font-family:'Playfair Display',serif;font-weight:600;font-size:1.5rem;letter-spacing:.02em;color:var(--ink);display:flex;align-items:baseline;gap:.5rem}
+.nav-logo .nav-logo-mark{font-style:italic;color:var(--primary);font-weight:500;font-size:1.2rem}
 .nav-links{display:flex;align-items:center;gap:2.2rem;flex-shrink:0}
 .nav-links a:not(.nav-donate){font-size:.78rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--text);transition:color .15s ease;position:relative;padding:.4rem 0}
 .nav-links a:not(.nav-donate)::after{content:'';position:absolute;left:0;right:0;bottom:-2px;height:1px;background:var(--primary);transform:scaleX(0);transform-origin:left;transition:transform .25s ease}
@@ -87,13 +87,7 @@ h1,h2,h3,h4{font-family:'Playfair Display',Georgia,serif;font-weight:600;letter-
 /* Hero — Editorial Split */
 .hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;padding-top:72px}
 .hero-left{background:var(--primary);color:#fff;padding:5rem 5% 4rem;display:flex;flex-direction:column;justify-content:center;position:relative}
-.hero-eyebrow{font-family:'Inter',sans-serif;font-weight:700;font-size:.72rem;letter-spacing:.36em;text-transform:uppercase;color:#fff;opacity:.85;margin-bottom:1.6rem;display:flex;align-items:center;gap:1rem}
-.hero-eyebrow::before{content:'';width:36px;height:1px;background:#fff;opacity:.7}
-.hero-logo{display:block;width:100%;max-width:520px;height:auto;margin:0 0 2.4rem}
-.hero-byline{margin-top:2.4rem;padding-top:1.4rem;border-top:1px solid rgba(255,255,255,.22);font-family:'Inter',sans-serif;font-weight:500;font-size:.7rem;letter-spacing:.28em;text-transform:uppercase;color:#fff;opacity:.78}
-.scroll-cue{position:absolute;bottom:1.8rem;left:5%;display:flex;align-items:center;gap:.7rem;font-family:'Inter',sans-serif;font-weight:600;font-size:.68rem;letter-spacing:.3em;text-transform:uppercase;color:#fff;opacity:.65}
-.scroll-cue::after{content:'';width:48px;height:1px;background:#fff;animation:scrollGlide 2.4s ease-in-out infinite}
-@keyframes scrollGlide{0%,100%{transform:scaleX(1);opacity:.6}50%{transform:scaleX(.4);opacity:1}}
+.hero-logo{display:block;width:100%;max-width:640px;height:auto;margin:0 auto 2.4rem}
 .hero-sub{font-family:'Playfair Display',serif;font-style:italic;font-weight:400;font-size:1.5rem;line-height:1.4;max-width:30rem;margin-bottom:2.6rem;opacity:.96;color:#fff}
 .hero-meta{font-family:'Inter',sans-serif;letter-spacing:.22em;font-size:.74rem;font-weight:600;margin-bottom:2.4rem;opacity:.9;text-transform:uppercase}
 .hero-meta span{margin:0 .8rem;opacity:.55}
@@ -260,7 +254,7 @@ footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(
 
 <!-- Nav -->
 <header id="nav">
-  <a href="#" class="nav-logo" aria-label="Tyler Haueter for Yakima County Prosecutor"><img src="logo.png" alt="Tyler Haueter for Yakima County Prosecutor"></a>
+  <a href="#" class="nav-logo" aria-label="Tyler Haueter for Yakima County Prosecutor">Haueter <span class="nav-logo-mark">/ Prosecutor</span></a>
   <div class="nav-links">
     <a href="#priorities">Priorities</a>
     <a href="#about">About</a>
@@ -284,7 +278,6 @@ footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(
 <!-- Hero -->
 <section class="hero" aria-label="Hero">
   <div class="hero-left">
-    <div class="hero-eyebrow">A Campaign for Yakima County · Vol. I</div>
     <img class="hero-logo" src="logo.png" alt="Tyler Haueter for Yakima County Prosecutor — Republican">
     <h1 class="visually-hidden" style="position:absolute;left:-9999px">Tyler Haueter for Yakima County Prosecutor</h1>
     <p class="hero-sub">Experience. Integrity. Justice — restored to the people of Yakima County.</p>
@@ -294,8 +287,6 @@ footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(
       <a href="#donate" class="btn btn-primary">Donate</a>
       <a href="#volunteer" class="btn btn-outline">Volunteer</a>
     </div>
-    <div class="hero-byline">Republican · Deputy Prosecuting Attorney · Special Assault Unit</div>
-    <div class="scroll-cue">Read on</div>
   </div>
   <div class="hero-right" aria-hidden="true">
     <div class="hero-photo"></div>
