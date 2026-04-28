@@ -215,6 +215,7 @@ section{padding:8rem 5%}
 .contrast-col--haueter .contrast-list li::before{background:var(--primary);width:18px}
 .contrast-col--opp .contrast-list li{color:rgba(255,255,255,.55)}
 .contrast-col--opp .contrast-list li::before{background:rgba(255,255,255,.3)}
+.contrast-col-year{display:none}
 
 /* Priorities — magazine editorial rows */
 .priorities-header{max-width:1100px;margin:0 auto;text-align:center}
@@ -313,14 +314,23 @@ footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(
   .engage-grid{grid-template-columns:1fr;gap:3rem}
   .scroll-cue{display:none}
   .contrast{padding:5rem 6%}
-  .years-strip{grid-template-columns:1fr;margin-top:3rem}
-  .year-divider{display:none}
-  .year-block{padding:1.4rem 0}
-  .contrast-grid{grid-template-columns:1fr;gap:0;margin-top:1rem}
-  .contrast-col{padding:2.6rem 0}
-  .contrast-col--haueter{border-right:none;border-bottom:1px solid rgba(255,255,255,.12);padding-top:0}
-  .contrast-col--haueter::before{height:3px;width:60px}
-  .contrast-col--opp{padding-left:0;padding-bottom:0}
+  /* Hide standalone years strip on mobile — duplicate inside each column */
+  .years-strip{display:none}
+  /* Restructure columns: each gets its own year as a hero element */
+  .contrast-grid{grid-template-columns:1fr;gap:3rem;margin-top:3rem}
+  .contrast-col{padding:0;position:relative}
+  .contrast-col-year{display:flex;flex-direction:column;align-items:flex-start;margin-bottom:1.6rem;padding-top:1.2rem}
+  .contrast-col-year .year-label{font-family:'Inter',sans-serif;font-weight:700;font-size:.7rem;letter-spacing:.32em;text-transform:uppercase;margin-bottom:.4rem;display:inline-flex;align-items:center;gap:.55rem}
+  .contrast-col-year .year-num{font-family:'Playfair Display',serif;font-weight:600;font-size:5rem;line-height:.92;letter-spacing:-0.04em}
+  .contrast-col--haueter{border-right:none;padding:0}
+  .contrast-col--haueter::before{height:3px;width:60px;top:0}
+  .contrast-col--haueter .contrast-col-year .year-label{color:var(--primary);position:relative}
+  .contrast-col--haueter .contrast-col-year .year-label::after{content:'';width:8px;height:8px;border-radius:50%;background:var(--primary);box-shadow:0 0 12px var(--primary)}
+  .contrast-col--haueter .contrast-col-year .year-num{color:#fff;text-shadow:0 0 50px rgba(168,16,13,.55),0 0 18px rgba(168,16,13,.3)}
+  .contrast-col--opp{padding:0;border-top:1px solid rgba(255,255,255,.12);padding-top:2.4rem}
+  .contrast-col--opp::before{height:2px;width:60px;top:0}
+  .contrast-col--opp .contrast-col-year .year-label{color:rgba(255,255,255,.4)}
+  .contrast-col--opp .contrast-col-year .year-num{color:rgba(255,255,255,.32);font-weight:400}
 }
 @media (max-width:768px){
   .nav-links{display:none}
@@ -442,6 +452,10 @@ footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(
 
   <div class="contrast-grid">
     <div class="contrast-col contrast-col--haueter">
+      <div class="contrast-col-year" aria-hidden="true">
+        <span class="year-label">Tyler · In Court</span>
+        <span class="year-num">Today</span>
+      </div>
       <div class="contrast-col-eyebrow">The Active Prosecutor</div>
       <div class="contrast-name">Tyler Haueter</div>
       <div class="contrast-tag">In court. Today.</div>
@@ -453,6 +467,10 @@ footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(
       </ul>
     </div>
     <div class="contrast-col contrast-col--opp">
+      <div class="contrast-col-year" aria-hidden="true">
+        <span class="year-label">His Opponent · Last Prosecuted</span>
+        <span class="year-num">2013</span>
+      </div>
       <div class="contrast-col-eyebrow">His Opponent</div>
       <div class="contrast-name">A Decade Out of Practice</div>
       <div class="contrast-tag">Last prosecuted a case in 2013.</div>
