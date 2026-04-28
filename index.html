@@ -127,8 +127,10 @@ section{padding:8rem 5%}
 .about-copy h2{font-size:clamp(2.2rem,4.4vw,3.6rem);margin-bottom:2rem;letter-spacing:-0.02em}
 .about-copy p{margin-bottom:1.3rem;font-size:1.08rem;line-height:1.78;color:var(--text)}
 .about-copy p.lead::first-letter{font-family:'Playfair Display',serif;font-weight:600;float:left;font-size:5.2rem;line-height:.86;padding:.4rem .7rem .1rem 0;color:var(--primary);font-style:normal}
-.pull-quote{position:relative;margin:2.4rem 0 0;padding:.6rem 0 .6rem 2.6rem;font-family:'Playfair Display',serif;font-style:italic;font-weight:500;font-size:1.6rem;line-height:1.4;color:var(--ink);border-left:2px solid var(--primary)}
-.pull-quote::before{content:'\201C';position:absolute;left:.5rem;top:-1rem;font-family:'Playfair Display',serif;font-style:normal;font-size:4rem;color:var(--primary);line-height:1;opacity:.35}
+.pull-quote{position:relative;margin:2.4rem 0 0;padding:.6rem 2.6rem .6rem 2.6rem;font-family:'Playfair Display',serif;font-style:italic;font-weight:500;font-size:1.6rem;line-height:1.4;color:var(--ink);border-left:2px solid var(--primary)}
+.pull-quote::before,.pull-quote::after{position:absolute;font-family:'Playfair Display',serif;font-style:normal;font-size:4rem;color:var(--primary);line-height:1;opacity:.35}
+.pull-quote::before{content:'\201C';left:.5rem;top:-1rem}
+.pull-quote::after{content:'\201D';right:0;bottom:-2.4rem}
 
 /* Priorities — magazine editorial rows */
 .priorities-header{max-width:1100px;margin:0 auto;text-align:center}
