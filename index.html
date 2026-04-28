@@ -92,7 +92,7 @@ h1,h2,h3,h4{font-family:'Playfair Display',Georgia,serif;font-weight:600;letter-
 .hero-photo{position:absolute;inset:0;background-image:url('family.jpg');background-size:cover;background-position:center 35%;animation:kenBurns 32s ease-in-out infinite alternate}
 .hero-photo::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 65%,rgba(14,14,14,.18) 100%)}
 @keyframes kenBurns{0%{transform:scale(1) translate(0,0)}100%{transform:scale(1.06) translate(-1%,-.5%)}}
-.hero-brand{background:linear-gradient(90deg,#fff 0%,#fff 28%,var(--primary) 38%,var(--primary) 100%);color:#fff;padding:3.5rem 5%;display:grid;grid-template-columns:auto 1fr auto;gap:3.5rem;align-items:center;position:relative;overflow:hidden}
+.hero-brand{background:var(--primary);color:#fff;padding:3.5rem 5%;display:grid;grid-template-columns:auto 1fr auto;gap:3.5rem;align-items:center;position:relative;overflow:hidden}
 .hero-brand::before{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.55 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");opacity:.16;pointer-events:none;mix-blend-mode:overlay}
 .hero-brand::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%,rgba(255,255,255,.08),transparent 60%);pointer-events:none;animation:heroAmbient 9s ease-in-out infinite}
 @keyframes heroAmbient{0%,100%{opacity:.55}50%{opacity:1}}
@@ -319,7 +319,7 @@ footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(
   .hero{min-height:auto}
   .hero-photo-banner{min-height:0;aspect-ratio:1.82/1}
   .hero-photo{background-position:center center}
-  .hero-brand{grid-template-columns:1fr;gap:1.6rem;text-align:center;padding:2.5rem 6%;justify-items:center;background:linear-gradient(180deg,#fff 0%,#fff 22%,var(--primary) 50%,var(--primary) 100%)}
+  .hero-brand{grid-template-columns:1fr;gap:1.6rem;text-align:center;padding:2.5rem 6%;justify-items:center}
   .hero-logo{max-width:240px}
   .hero-ctas{justify-content:center;flex-wrap:wrap}
   .about-grid{grid-template-columns:1fr;gap:3rem}
