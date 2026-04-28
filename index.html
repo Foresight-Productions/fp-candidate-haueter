@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Tyler Haueter for Yakima County Prosecutor | Republican · 2026</title>
-<meta name="description" content="Tyler Haueter, prosecutor for the City of Kennewick and former Special Assault Unit attorney in Yakima County, is running for Yakima County Prosecutor in 2026 to hold violent offenders accountable and stand with crime victims.">
+<meta name="description" content="Tyler Haueter — Air Force veteran, husband, and father of seven — is the active prosecutor running for Yakima County Prosecutor in 2026. Convicted Naches murderer Randy Razey to 23+ years; multiple sex crime convictions including 20-to-life. Republican.">
 <link rel="canonical" href="https://haueterforprosecutor.com/">
 
 <!-- Open Graph -->
@@ -237,15 +237,26 @@ section{padding:8rem 5%}
 .priority-mark{font-family:'Playfair Display',serif;font-style:italic;font-size:1rem;color:var(--text-muted);opacity:0;transform:translateX(-8px);transition:opacity .3s ease,transform .3s ease;align-self:center;position:relative;z-index:1}
 .priority-row:hover .priority-mark{opacity:.7;transform:translateX(0)}
 
-/* Record — cinematic pull quote */
-.record{background:var(--ink);color:#fff;text-align:center;position:relative;overflow:hidden}
-.record::before{content:'\201C';position:absolute;font-family:'Playfair Display',serif;font-weight:700;font-style:normal;font-size:32rem;line-height:.85;top:-4rem;left:50%;transform:translateX(-50%);color:#fff;opacity:.04;pointer-events:none}
-.record-inner{position:relative;z-index:1;max-width:880px;margin:0 auto}
+/* Record — real cases */
+.record{background:var(--ink);color:#fff;position:relative;overflow:hidden;text-align:center}
+.record::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 100%,rgba(168,16,13,.18),transparent 55%);pointer-events:none}
+.record-inner{position:relative;z-index:1;max-width:1180px;margin:0 auto}
 .record .section-eyebrow{color:#fff;opacity:.85;justify-content:center}
-.record .section-eyebrow::before{background:#fff;opacity:.6}
-.record-quote{font-family:'Playfair Display',serif;font-style:italic;font-weight:500;font-size:clamp(1.7rem,3.4vw,2.6rem);line-height:1.36;margin:2rem auto 0;color:#fff;letter-spacing:-0.005em}
-.record-attr{font-family:'Inter',sans-serif;letter-spacing:.32em;font-size:.74rem;margin-top:2.4rem;opacity:.65;text-transform:uppercase;font-weight:600;display:inline-flex;align-items:center;gap:1rem}
-.record-attr::before,.record-attr::after{content:'';width:24px;height:1px;background:#fff;opacity:.55}
+.record .section-eyebrow::before{display:none}
+.record-headline{font-family:'Playfair Display',serif;font-weight:600;font-size:clamp(2.2rem,4.6vw,3.6rem);color:#fff;margin:0 auto 1.2rem;letter-spacing:-0.02em;line-height:1.05}
+.record-headline em{font-style:italic;color:var(--primary);font-weight:500}
+.record-lede{font-size:1.15rem;line-height:1.5;color:rgba(255,255,255,.7);max-width:38rem;margin:0 auto 4rem;font-style:italic;font-family:'Playfair Display',serif}
+.record-cases{display:grid;grid-template-columns:repeat(3,1fr);gap:1.8rem;text-align:left}
+.case-card{background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.08);padding:2.2rem 1.8rem;position:relative;transition:transform .35s ease,border-color .35s ease,background .35s ease}
+.case-card::before{content:'';position:absolute;left:0;top:0;width:60px;height:2px;background:var(--primary);transition:width .4s cubic-bezier(.2,.8,.2,1)}
+.case-card:hover{transform:translateY(-4px);border-color:rgba(168,16,13,.4);background:rgba(168,16,13,.06)}
+.case-card:hover::before{width:120px}
+.case-num{font-family:'Playfair Display',serif;font-weight:600;font-size:5rem;line-height:.9;color:var(--primary);text-shadow:0 0 50px rgba(168,16,13,.4);letter-spacing:-0.03em;margin-bottom:1.2rem;display:flex;align-items:baseline;gap:.4rem}
+.case-num svg{stroke:var(--primary);filter:drop-shadow(0 0 20px rgba(168,16,13,.5))}
+.case-num-unit{font-size:1.05rem;letter-spacing:.18em;font-weight:600;color:rgba(255,255,255,.6);text-transform:uppercase;font-family:'Inter',sans-serif;text-shadow:none}
+.case-meta{font-family:'Inter',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-bottom:.8rem}
+.case-title{font-family:'Playfair Display',serif;font-weight:600;font-size:1.4rem;color:#fff;margin-bottom:.7rem;letter-spacing:-0.012em;line-height:1.2}
+.case-desc{font-size:.96rem;line-height:1.6;color:rgba(255,255,255,.72)}
 
 /* Endorsements */
 .endorsements{text-align:center;background:var(--bg-subtle)}
@@ -347,7 +358,8 @@ footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(
   .hero-ctas .btn{width:100%}
   .footer-inner{flex-direction:column;text-align:center;align-items:center}
   .footer-links{justify-content:center}
-  .record::before{font-size:18rem}
+  .record-cases{grid-template-columns:1fr;gap:1.2rem}
+  .case-num{font-size:3.6rem}
 }
 @media (max-width:400px){
   section{padding:4rem 6%}
@@ -416,18 +428,21 @@ footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(
       <aside class="fact-card">
         <div class="fc-eyebrow">The Candidate</div>
         <ul class="fc-list">
-          <li>Prosecutor, City of Kennewick</li>
-          <li>Formerly Special Assault Unit, Yakima County</li>
+          <li>Assistant City Attorney, City of Kennewick</li>
+          <li>Former Deputy Prosecutor — Yakima County Special Assault Unit</li>
+          <li>U.S. Air Force Veteran &middot; 7 Years</li>
           <li>J.D., University of Idaho College of Law</li>
+          <li>Husband, father of seven &middot; Yakima County resident</li>
         </ul>
       </aside>
     </div>
     <div class="about-copy fade-up">
       <div class="section-eyebrow">From the Candidate</div>
-      <h2>A prosecutor who knows Yakima County's <em>courtrooms</em>.</h2>
-      <p class="lead">Tyler Haueter currently serves as a prosecutor for the City of Kennewick. Before that, he spent years in the Yakima County Prosecutor's Office, working in the Special Assault Unit on some of the most serious felony cases the office handles. He earned his law degree at the University of Idaho College of Law and has spent his career holding the line for victims of violent crime.</p>
-      <p>With longtime Prosecutor Joe Brusic stepping aside in 2026, this is a defining moment for Yakima County. Tyler is coming home to bring proven courtroom experience, a steady hand, and a clear-eyed commitment to public safety to the office of Prosecuting Attorney.</p>
-      <blockquote class="pull-quote">Crime victims deserve a prosecutor who has actually stood next to them in court. That is the experience I am bringing to this office.</blockquote>
+      <h2>An Air Force veteran. A prosecutor. A Yakima County <em>dad of seven</em>.</h2>
+      <p class="lead">Tyler Haueter was raised in Kennewick, Washington as the oldest of four children. After serving a mission in Brazil and meeting his wife Alexis, he enlisted in the United States Air Force, where he spent seven years as a paralegal — work that earned him Paralegal of the Year for the Pacific Region and grew his commitment to the law.</p>
+      <p>After leaving the Air Force, Tyler returned home to Eastern Washington and worked for over three years as the sole criminal investigator for the Yakima County Department of Assigned Counsel — handling felony, misdemeanor, and juvenile cases — before earning his J.D. from the University of Idaho College of Law. He went on to serve in the Yakima County Prosecutor's Office Special Assault Unit, prosecuting the office's most serious felonies. He currently serves as Assistant City Attorney for the City of Kennewick.</p>
+      <p>Tyler and Alexis have been married for nearly twenty years and have seven children. After moving with the Air Force for years, his family put down roots in Yakima County eight years ago. With Prosecutor Joe Brusic stepping aside in 2026, Tyler is coming home to lead the Prosecutor's Office and to keep Yakima County safer — for his family and for yours.</p>
+      <blockquote class="pull-quote">I believe in transparency, integrity, and equal treatment under the law. I am passionate about serving the public as your prosecutor.</blockquote>
     </div>
   </div>
 </section>
@@ -537,12 +552,33 @@ footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(
   </div>
 </section>
 
-<!-- Record -->
+<!-- Record — real cases -->
 <section class="record">
   <div class="record-inner">
-    <div class="section-eyebrow">In His Own Words</div>
-    <p class="record-quote fade-up">I cut my teeth in the trenches of Yakima County's Special Assault Unit, prosecuting the most difficult cases the office handles. That experience is what this office needs.</p>
-    <div class="record-attr">Tyler Haueter</div>
+    <div class="section-eyebrow">The Record</div>
+    <h2 class="record-headline fade-up">Real cases. <em>Real convictions</em>.</h2>
+    <p class="record-lede fade-up">Tyler hasn't just talked about prosecuting violent crime. He's done it.</p>
+
+    <div class="record-cases">
+      <article class="case-card fade-up">
+        <div class="case-num">23<span class="case-num-unit">+ yrs</span></div>
+        <div class="case-meta">November 2024 &middot; Naches</div>
+        <h3 class="case-title">State v. Randy Razey</h3>
+        <p class="case-desc">Murder conviction. Tyler successfully prosecuted Randy Razey for the killing of his father in Naches, securing a sentence of more than 23 years in prison.</p>
+      </article>
+      <article class="case-card fade-up">
+        <div class="case-num">20<span class="case-num-unit">to life</span></div>
+        <div class="case-meta">2025 &middot; Yakima County</div>
+        <h3 class="case-title">Multi-Count Sex Crime Convictions</h3>
+        <p class="case-desc">Jury convictions on Child Molestation, Incest, and Indecent Liberties where the victim was incapable of consent — indeterminate sentence of 20 years to life.</p>
+      </article>
+      <article class="case-card fade-up">
+        <div class="case-num"><svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg></div>
+        <div class="case-meta">2025 &middot; Yakima County</div>
+        <h3 class="case-title">Child Molestation Conviction</h3>
+        <p class="case-desc">Successful prosecution of a defendant charged with Child Molestation — another conviction protecting Yakima County's children.</p>
+      </article>
+    </div>
   </div>
 </section>
 
