@@ -129,8 +129,9 @@ section{padding:8rem 5%}
 /* About */
 .about{background:var(--bg-subtle)}
 .about-grid{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
-.about-img-wrap{position:relative}
-.about-img{aspect-ratio:4/5;background:center/cover no-repeat;background-image:url('headshot.jpg');background-position:center 15%;-webkit-mask-image:radial-gradient(ellipse 75% 80% at center,#000 55%,rgba(0,0,0,.6) 78%,transparent 100%);mask-image:radial-gradient(ellipse 75% 80% at center,#000 55%,rgba(0,0,0,.6) 78%,transparent 100%)}
+.about-img-wrap{position:relative;padding:0 1.8rem 1.8rem 0}
+.about-img-wrap::before{content:'';position:absolute;top:1.8rem;right:0;bottom:0;left:1.8rem;background:var(--primary);z-index:0}
+.about-img{aspect-ratio:4/5;background:center/cover no-repeat;background-image:url('headshot.jpg');background-position:center 15%;position:relative;z-index:1;box-shadow:0 30px 60px -20px rgba(14,14,14,.4)}
 
 /* Credentials strip — horizontal byline below the grid */
 .credentials-strip{max-width:1240px;margin:5rem auto 0;padding:2.4rem 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);display:grid;grid-template-columns:repeat(4,1fr);gap:0;list-style:none;position:relative}
