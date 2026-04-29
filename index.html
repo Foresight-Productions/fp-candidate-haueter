@@ -87,8 +87,8 @@ h1,h2,h3,h4{font-family:'Playfair Display',Georgia,serif;font-weight:600;letter-
 .nav-overlay a{font-family:'EB Garamond',serif;font-size:1.6rem;font-weight:600;color:var(--ink)}
 
 /* Hero . Stacked: family photo banner over red brand strip */
-.hero{display:grid;grid-template-rows:1fr auto;min-height:100vh;min-height:100dvh;padding-top:72px}
-.hero-photo-banner{position:relative;overflow:hidden;background:var(--ink);min-height:55vh}
+.hero{display:flex;flex-direction:column;height:100vh;height:100dvh;padding-top:72px}
+.hero-photo-banner{position:relative;overflow:hidden;background:var(--ink);flex:1 1 auto;min-height:0}
 .hero-photo{position:absolute;inset:0;background-image:url('family.jpg');background-size:cover;background-position:center 35%;animation:kenBurns 32s ease-in-out infinite alternate}
 .hero-photo::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 65%,rgba(14,14,14,.18) 100%)}
 @keyframes kenBurns{0%{transform:scale(1) translate(0,0)}100%{transform:scale(1.06) translate(-1%,-.5%)}}
@@ -316,7 +316,7 @@ footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(
 
 /* Mobile */
 @media (max-width:900px){
-  .hero-photo-banner{min-height:0}
+  .hero-photo-banner{min-height:0;flex:1 1 auto}
   .hero-photo{background-position:center center}
   .hero-brand{grid-template-columns:1fr;gap:1.6rem;text-align:center;padding:2.5rem 6%;justify-items:center}
   .hero-logo{max-width:240px}
