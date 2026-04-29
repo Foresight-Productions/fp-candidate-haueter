@@ -316,7 +316,8 @@ footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(
 
 /* Mobile */
 @media (max-width:900px){
-  .hero-photo-banner{min-height:0;flex:1 1 auto}
+  .hero{height:auto;min-height:100dvh}
+  .hero-photo-banner{flex:1 1 auto;min-height:55dvh;aspect-ratio:auto}
   .hero-photo{background-position:center center}
   .hero-brand{grid-template-columns:1fr;gap:1.6rem;text-align:center;padding:2.5rem 6%;justify-items:center}
   .hero-logo{max-width:240px}
