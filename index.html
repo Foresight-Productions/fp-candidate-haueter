@@ -100,10 +100,10 @@ h1,h2,h3,h4{font-family:'Playfair Display',Georgia,serif;font-weight:600;letter-
 .hero-logo{display:block;max-width:320px;width:100%;height:auto;filter:drop-shadow(0 8px 28px rgba(0,0,0,.45));opacity:0;transform:scale(.94);animation:heroLogoIn 1.1s cubic-bezier(.2,.8,.2,1) .15s forwards;position:relative;z-index:2}
 @keyframes heroLogoIn{to{opacity:1;transform:scale(1)}}
 .hero-text{position:relative;z-index:2;opacity:0;transform:translateY(10px);animation:heroFadeUp .8s ease .55s forwards}
-.hero-sub{display:flex;flex-direction:column;gap:.9rem;max-width:42rem;color:#fff;margin-bottom:1.4rem}
-.hero-tagline{font-family:'Oswald',sans-serif;font-weight:600;font-size:clamp(.85rem,1.05vw,1rem);letter-spacing:.42em;text-transform:uppercase;display:flex;align-items:center;flex-wrap:wrap;gap:.85rem;color:rgba(255,255,255,.92)}
+.hero-sub{display:flex;flex-direction:column;gap:.9rem;color:#fff;margin-bottom:1.4rem}
+.hero-tagline{font-family:'Oswald',sans-serif;font-weight:600;font-size:clamp(.8rem,1vw,1rem);letter-spacing:.42em;text-transform:uppercase;display:flex;align-items:center;flex-wrap:nowrap;gap:.85rem;color:rgba(255,255,255,.92);white-space:nowrap}
 .hero-tagline-dot{opacity:.55;font-size:.7em;letter-spacing:0}
-.hero-promise{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-weight:500;font-size:clamp(1.7rem,3vw,2.8rem);line-height:1.18;letter-spacing:-0.015em;color:#fff}
+.hero-promise{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-weight:500;font-size:clamp(1.3rem,2.2vw,2.4rem);line-height:1.18;letter-spacing:-0.015em;color:#fff;white-space:nowrap}
 .hero-promise em{font-style:italic;font-weight:600;color:#fff;border-bottom:2px solid rgba(255,255,255,.5);padding-bottom:.05em}
 .hero-meta{font-family:'Inter',sans-serif;letter-spacing:.22em;font-size:.8rem;font-weight:700;text-transform:uppercase;opacity:.92}
 .hero-meta span{margin:0 .7rem;opacity:.55}
@@ -324,6 +324,8 @@ footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(
   .hero{height:auto;min-height:100dvh}
   .hero-photo-banner{flex:1 1 auto;min-height:55dvh;aspect-ratio:auto}
   .hero-photo{background-size:contain;background-repeat:no-repeat;background-position:center center}
+  .hero-tagline{white-space:normal;flex-wrap:wrap}
+  .hero-promise{white-space:normal}
   .hero-brand{grid-template-columns:1fr;gap:1.6rem;text-align:center;padding:2.5rem 6%;justify-items:center}
   .hero-logo{max-width:240px}
   .hero-ctas{justify-content:center;flex-wrap:wrap}
