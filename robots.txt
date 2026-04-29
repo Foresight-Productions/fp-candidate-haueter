@@ -32,4 +32,4 @@ Allow: /
 User-agent: Bytespider
 Allow: /
 
-Sitemap: https://haueterforprosecutor.com/sitemap.xml
+Sitemap: https://tylerforyakima.com/sitemap.xml
