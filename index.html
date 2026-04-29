@@ -100,7 +100,11 @@ h1,h2,h3,h4{font-family:'Playfair Display',Georgia,serif;font-weight:600;letter-
 .hero-logo{display:block;max-width:320px;width:100%;height:auto;filter:drop-shadow(0 8px 28px rgba(0,0,0,.45));opacity:0;transform:scale(.94);animation:heroLogoIn 1.1s cubic-bezier(.2,.8,.2,1) .15s forwards;position:relative;z-index:2}
 @keyframes heroLogoIn{to{opacity:1;transform:scale(1)}}
 .hero-text{position:relative;z-index:2;opacity:0;transform:translateY(10px);animation:heroFadeUp .8s ease .55s forwards}
-.hero-sub{font-family:'Oswald','Inter',sans-serif;font-style:normal;font-weight:500;font-size:clamp(1.7rem,2.9vw,2.7rem);line-height:1.2;letter-spacing:.005em;max-width:60rem;color:#fff;margin-bottom:1.1rem}
+.hero-sub{display:flex;flex-direction:column;gap:.9rem;max-width:42rem;color:#fff;margin-bottom:1.4rem}
+.hero-tagline{font-family:'Oswald',sans-serif;font-weight:600;font-size:clamp(.85rem,1.05vw,1rem);letter-spacing:.42em;text-transform:uppercase;display:flex;align-items:center;flex-wrap:wrap;gap:.85rem;color:rgba(255,255,255,.92)}
+.hero-tagline-dot{opacity:.55;font-size:.7em;letter-spacing:0}
+.hero-promise{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-weight:500;font-size:clamp(1.7rem,3vw,2.8rem);line-height:1.18;letter-spacing:-0.015em;color:#fff}
+.hero-promise em{font-style:italic;font-weight:600;color:#fff;border-bottom:2px solid rgba(255,255,255,.5);padding-bottom:.05em}
 .hero-meta{font-family:'Inter',sans-serif;letter-spacing:.22em;font-size:.8rem;font-weight:700;text-transform:uppercase;opacity:.92}
 .hero-meta span{margin:0 .7rem;opacity:.55}
 .hero-ctas{position:relative;z-index:2;display:flex;gap:.8rem;opacity:0;transform:translateY(10px);animation:heroFadeUp .8s ease .85s forwards}
@@ -415,7 +419,10 @@ footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(
     <img class="hero-logo" src="logo.png" alt="Tyler Haueter for Yakima County Prosecutor · Republican">
     <h1 class="visually-hidden" style="position:absolute;left:-9999px">Tyler Haueter for Yakima County Prosecutor</h1>
     <div class="hero-text">
-      <p class="hero-sub">Experience. Integrity. Justice. Restored to the people of Yakima County.</p>
+      <p class="hero-sub">
+        <span class="hero-tagline"><span>Experience</span><span class="hero-tagline-dot">&bull;</span><span>Integrity</span><span class="hero-tagline-dot">&bull;</span><span>Justice</span></span>
+        <span class="hero-promise">Restored to the people of <em>Yakima County</em>.</span>
+      </p>
       <div class="hero-meta">PRIMARY · AUG 4, 2026<span>·</span>GENERAL · NOV 3, 2026</div>
     </div>
     <div class="hero-ctas">
