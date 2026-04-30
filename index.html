@@ -399,7 +399,7 @@ footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(
     <a href="#endorsements">Endorsements</a>
     <a href="#contact">Contact</a>
     <!-- TODO HANDOFF: Replace # with real WinRed/Anedot donate URL -->
-    <a href="#donate" class="nav-donate">Donate</a>
+    <a href="/donate.html" class="nav-donate">Donate</a>
   </div>
   <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
     <span></span><span></span><span></span>
@@ -410,7 +410,7 @@ footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(
   <a href="#about">About</a>
   <a href="#endorsements">Endorsements</a>
   <a href="#contact">Contact</a>
-  <a href="#donate" class="nav-donate" style="margin-top:.6rem">Donate</a>
+  <a href="/donate.html" class="nav-donate" style="margin-top:.6rem">Donate</a>
 </div>
 
 <!-- Hero -->
@@ -430,7 +430,7 @@ footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(
     </div>
     <div class="hero-ctas">
       <!-- TODO HANDOFF: real donate URL -->
-      <a href="#donate" class="btn btn-primary">Donate</a>
+      <a href="/donate.html" class="btn btn-primary">Donate</a>
       <a href="#volunteer" class="btn btn-outline">Volunteer</a>
     </div>
   </div>
@@ -621,7 +621,7 @@ footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(
   <h2>Help us win this <em>seat</em> for Yakima County.</h2>
   <p>Every contribution funds yard signs, mailers, and the work it takes to win.</p>
   <!-- TODO HANDOFF: real donate URL (WinRed / Anedot) -->
-  <a href="#" class="btn btn-primary">Donate</a>
+  <a href="/donate.html" class="btn btn-primary">Donate</a>
 </section>
 
 <!-- Volunteer + Contact -->
@@ -631,8 +631,11 @@ footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(
       <div class="section-eyebrow">Get Involved</div>
       <h3>Join the team.</h3>
       <p>Sign up to door-knock, phone bank, host a sign, or help host an event. We'll be in touch.</p>
-      <!-- TODO HANDOFF: replace mailto with campaign volunteer email -->
-      <form action="mailto:volunteer@tylerforyakima.com" method="post" enctype="text/plain">
+      <form action="https://formsubmit.co/info@tylerforyakima.com" method="POST">
+        <input type="hidden" name="_subject" value="New volunteer signup — TylerForYakima.com">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="true">
+        <input type="hidden" name="_next" value="https://tylerforyakima.com/thanks.html">
         <input type="text" name="name" placeholder="Full name" required>
         <input type="email" name="email" placeholder="Email" required>
         <input type="tel" name="phone" placeholder="Phone">
@@ -654,8 +657,7 @@ footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(
         <!-- TODO HANDOFF: real campaign email -->
         <a href="mailto:info@tylerforyakima.com">info@tylerforyakima.com</a>
         <strong>Mailing</strong>
-        <!-- TODO HANDOFF: committee mailing address -->
-        [Mailing address pending]
+        Coming soon
         <strong>Election</strong>
         Primary · Aug 4, 2026<br>General · Nov 3, 2026
       </div>
@@ -672,7 +674,7 @@ footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(
       <li><a href="#about">About</a></li>
       <li><a href="#endorsements">Endorsements</a></li>
       <li><a href="#contact">Contact</a></li>
-      <li><a href="#donate">Donate</a></li>
+      <li><a href="/donate.html">Donate</a></li>
     </ul>
   </div>
   <div class="compliance">
