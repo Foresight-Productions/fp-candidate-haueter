@@ -1,7 +1,0 @@
-name = "fp-candidate-haueter"
-compatibility_date = "2026-04-30"
-pages_build_output_dir = "."
-
-[[send_email]]
-name = "SEND_EMAIL"
-destination_address = "info@media4sight.net"
