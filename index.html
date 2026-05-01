@@ -159,7 +159,7 @@ section{padding:8rem 5%}
 .contrast-header h2{font-family:'Playfair Display',serif;margin:0 auto 1.6rem;color:#fff;display:flex;flex-direction:column;align-items:center;gap:.25em;line-height:.96}
 .contrast-header h2 .h2-line{display:block;opacity:0;transform:translateY(14px) scale(.96);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.9,.25,1.1)}
 .contrast-header h2 .h2-line-1{font-weight:600;font-size:clamp(2.2rem,5.4vw,4.2rem);letter-spacing:-0.025em;transition-delay:.15s}
-.contrast-header h2 .h2-line-2{font-style:italic;font-weight:700;color:var(--primary);font-size:clamp(2.8rem,7.4vw,6rem);letter-spacing:-0.035em;text-shadow:none;transition-delay:.55s;position:relative}
+.contrast-header h2 .h2-line-2{font-style:italic;font-weight:700;color:var(--primary);font-size:clamp(2.8rem,7.4vw,6rem);letter-spacing:-0.035em;text-shadow:0 0 90px rgba(168,16,13,.55),0 0 30px rgba(168,16,13,.3);transition-delay:.55s;position:relative;will-change:transform;transform:translateZ(0)}
 .contrast.in .contrast-header h2 .h2-line{opacity:1;transform:translateY(0) scale(1)}
 .contrast-header h2 .h2-line-2::after{content:'';position:absolute;left:50%;bottom:-.18em;width:0;height:3px;background:var(--primary);transform:translateX(-50%);transition:width 1s cubic-bezier(.2,.8,.2,1) 1.4s}
 .contrast.in .contrast-header h2 .h2-line-2::after{width:38%}
@@ -177,7 +177,7 @@ section{padding:8rem 5%}
 .year-block--haueter .year-label::after{content:'';width:9px;height:9px;border-radius:50%;background:var(--primary);box-shadow:0 0 14px var(--primary);position:relative}
 .year-block--haueter .year-label::before{content:'';position:absolute;right:0;top:50%;width:9px;height:9px;border-radius:50%;background:var(--primary);transform:translate(0,-50%);animation:livePulse 1.8s ease-out infinite;opacity:.6}
 @keyframes livePulse{0%{transform:translate(0,-50%) scale(1);opacity:.6}100%{transform:translate(0,-50%) scale(3.2);opacity:0}}
-.year-block--haueter .year-num{color:#fff;text-shadow:none;transform:scale(.9);opacity:0;transition:transform 1s cubic-bezier(.2,.8,.2,1) .25s,opacity .8s ease .25s}
+.year-block--haueter .year-num{color:#fff;text-shadow:0 0 80px rgba(168,16,13,.6),0 0 30px rgba(168,16,13,.3);transform:scale(.9);opacity:0;transition:transform 1s cubic-bezier(.2,.8,.2,1) .25s,opacity .8s ease .25s;will-change:transform,opacity}
 .contrast.in .year-block--haueter .year-num{transform:scale(1);opacity:1}
 .year-block--opp .year-label{color:rgba(255,255,255,.4)}
 .year-block--opp .year-num{color:rgba(255,255,255,.28);font-weight:400;opacity:0;transform:translateY(12px);transition:opacity 1.2s ease .7s,transform 1.2s ease .7s}
@@ -257,8 +257,8 @@ section{padding:8rem 5%}
 .case-card::before{content:'';position:absolute;left:0;top:0;width:60px;height:2px;background:var(--primary);transition:width .4s cubic-bezier(.2,.8,.2,1)}
 .case-card:hover{transform:translateY(-4px);border-color:rgba(168,16,13,.4);background:rgba(168,16,13,.06)}
 .case-card:hover::before{width:120px}
-.case-num{font-family:'Playfair Display',serif;font-weight:600;font-size:5rem;line-height:.9;color:var(--primary);letter-spacing:-0.03em;margin-bottom:1.2rem;display:flex;align-items:baseline;gap:.4rem}
-.case-num svg{stroke:var(--primary)}
+.case-num{font-family:'Playfair Display',serif;font-weight:600;font-size:5rem;line-height:.9;color:var(--primary);text-shadow:0 0 50px rgba(168,16,13,.4);letter-spacing:-0.03em;margin-bottom:1.2rem;display:flex;align-items:baseline;gap:.4rem;will-change:transform;transform:translateZ(0)}
+.case-num svg{stroke:var(--primary);filter:drop-shadow(0 0 20px rgba(168,16,13,.5))}
 .case-num-unit{font-size:1.05rem;letter-spacing:.18em;font-weight:600;color:rgba(255,255,255,.6);text-transform:uppercase;font-family:'Inter',sans-serif;text-shadow:none}
 .case-meta{font-family:'Inter',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-bottom:.8rem}
 .case-title{font-family:'Playfair Display',serif;font-weight:600;font-size:1.4rem;color:#fff;margin-bottom:.7rem;letter-spacing:-0.012em;line-height:1.2}
@@ -381,7 +381,7 @@ footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(
   .contrast-col--haueter::before{height:3px;width:60px;top:0}
   .contrast-col--haueter .contrast-col-year .year-label{color:var(--primary);position:relative}
   .contrast-col--haueter .contrast-col-year .year-label::after{content:'';width:8px;height:8px;border-radius:50%;background:var(--primary);box-shadow:0 0 12px var(--primary)}
-  .contrast-col--haueter .contrast-col-year .year-num{color:#fff;text-shadow:none}
+  .contrast-col--haueter .contrast-col-year .year-num{color:#fff;text-shadow:0 0 50px rgba(168,16,13,.55),0 0 18px rgba(168,16,13,.3);will-change:transform;transform:translateZ(0)}
   .contrast-col--opp{padding:0;border-top:1px solid rgba(255,255,255,.12);padding-top:2.4rem}
   .contrast-col--opp::before{height:2px;width:60px;top:0}
   .contrast-col--opp .contrast-col-year .year-label{color:rgba(255,255,255,.4)}
