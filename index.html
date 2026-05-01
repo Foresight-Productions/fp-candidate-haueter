@@ -386,22 +386,43 @@ footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(
 @media (max-width:768px){
   .nav-links{display:none}
   .nav-toggle{display:flex}
+  #nav{padding:0 4%;gap:.6rem}
+  .nav-logo{font-size:1.25rem}
+  .nav-logo .nav-logo-mark{display:none}
   section{padding:5rem 6%}
   .priority-row{grid-template-columns:80px 1fr;gap:1.4rem;padding:2.2rem .4rem}
   .priority-row:hover{padding-left:.8rem}
   .priority-num{font-size:2.2rem}
   .priority-mark{display:none}
   .priority-row h3{font-size:1.45rem}
-  .hero-ctas{flex-direction:column;align-items:stretch}
+  .hero-ctas{flex-direction:column;align-items:stretch;width:100%;max-width:300px;margin:0 auto}
   .hero-ctas .btn{width:100%}
-  .footer-inner{flex-direction:column;text-align:center;align-items:center}
-  .footer-links{justify-content:center}
+  .hero-tagline{letter-spacing:.28em;gap:.6rem;font-size:.78rem}
+  .hero-promise{font-size:1.4rem;line-height:1.25}
+  .footer-inner{flex-direction:column;text-align:center;align-items:center;gap:1.2rem}
+  .footer-links{justify-content:center;flex-wrap:wrap;gap:.4rem 1.2rem}
   .record-cases{grid-template-columns:1fr;gap:1.2rem}
   .case-num{font-size:3.6rem}
+  .endorse-form button,.endorse-form-wrap .btn{width:100%}
+  .engage-col form button{width:100%}
+  .donate-banner .btn{width:100%;max-width:300px}
+  .compliance{font-size:.7rem;line-height:1.6}
 }
 @media (max-width:400px){
-  section{padding:4rem 6%}
+  section{padding:4rem 5%}
   .about-copy h2{font-size:2rem}
+  .nav-logo{font-size:1.1rem}
+  .hero-brand{padding:2rem 5%}
+  .hero-logo{max-width:200px}
+  .hero-promise{font-size:1.25rem}
+  .hero-meta{font-size:.7rem;letter-spacing:.18em}
+  .endorse-form-wrap{padding:1.2rem 1rem}
+  .priority-row{grid-template-columns:60px 1fr;gap:1rem;padding:1.8rem .2rem}
+  .priority-num{font-size:1.8rem}
+  .priority-row h3{font-size:1.2rem}
+  .priority-row p{font-size:.95rem}
+  .credentials-strip li{padding:1rem .4rem}
+  .credentials-strip li .num{font-size:1.6rem}
 }
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none !important;transition:none !important}
