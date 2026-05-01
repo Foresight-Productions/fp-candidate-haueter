@@ -150,8 +150,8 @@ section{padding:8rem 5%}
 .pull-quote::after{content:'\201D';right:0;bottom:-2.4rem}
 
 /* The Contrast . cinematic dark panel */
-.contrast{background:var(--ink);color:#fff;position:relative;overflow:hidden;padding:8rem 5%}
-.contrast::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 25% 50%,rgba(168,16,13,.22),transparent 55%);pointer-events:none;opacity:.6}
+.contrast{background:var(--ink);color:#fff;position:relative;overflow:hidden;padding:8rem 5%;contain:paint;will-change:transform;transform:translateZ(0)}
+.contrast::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 25% 50%,rgba(168,16,13,.22),transparent 55%);pointer-events:none;opacity:.6;will-change:transform;transform:translateZ(0)}
 .contrast::after{content:'';position:absolute;left:0;right:0;top:0;height:1px;background:linear-gradient(90deg,transparent,var(--primary) 50%,transparent)}
 .contrast-header{max-width:920px;margin:0 auto;text-align:center;position:relative;z-index:2}
 .contrast-header .section-eyebrow{justify-content:center;color:#fff;opacity:.75}
