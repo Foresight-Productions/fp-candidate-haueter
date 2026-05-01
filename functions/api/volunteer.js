@@ -105,7 +105,7 @@ export async function onRequestPost(context) {
 </body></html>`.trim();
 
   const FROM = "noreply@tylerforyakima.com";
-  const TO = "info@tylerforyakima.com";
+  const TO = "info@media4sight.net";
 
   const raw = buildMime({
     from: `TylerForYakima Volunteer Form <${FROM}>`,
