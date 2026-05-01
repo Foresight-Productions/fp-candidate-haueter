@@ -103,11 +103,11 @@ h1,h2,h3,h4{font-family:'Playfair Display',Georgia,serif;font-weight:600;letter-
 .hero-tagline-dot{opacity:.55;font-size:.7em;letter-spacing:0}
 .hero-promise{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-weight:500;font-size:clamp(1.3rem,2.2vw,2.4rem);line-height:1.25;letter-spacing:-0.015em;color:#fff;white-space:nowrap}
 .hero-promise em{font-style:italic;font-weight:700;color:#fff}
-.hero-meta{font-family:'Inter',sans-serif;letter-spacing:.22em;font-size:.8rem;font-weight:700;text-transform:uppercase;opacity:.92;display:inline-flex;align-items:center;flex-wrap:wrap;gap:.6rem 1rem}
-.hero-meta-row{display:inline-flex;align-items:baseline;gap:.55rem;white-space:nowrap}
+.hero-meta{font-family:'Inter',sans-serif;letter-spacing:.22em;font-size:.8rem;font-weight:700;text-transform:uppercase;opacity:.92;display:flex;flex-wrap:wrap;justify-content:flex-start;align-items:baseline;gap:.5rem 1.4rem}
+.hero-meta-row{display:inline-flex;align-items:baseline;gap:.55rem;white-space:nowrap;position:relative}
+.hero-meta-row + .hero-meta-row::before{content:'\b7';position:absolute;left:-.85rem;top:50%;transform:translateY(-50%);opacity:.4}
 .hero-meta-label{opacity:.65;font-weight:600}
 .hero-meta-date{font-weight:700}
-.hero-meta-sep{opacity:.4}
 .hero-ctas{position:relative;z-index:2;display:flex;gap:.8rem;opacity:0;transform:translateY(10px);animation:heroFadeUp .8s ease .85s forwards}
 @keyframes heroFadeUp{to{opacity:1;transform:translateY(0)}}
 .hero-ctas{display:flex;gap:1rem;flex-wrap:wrap}
@@ -422,9 +422,9 @@ footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(
   .hero-brand{padding:2rem 5%}
   .hero-logo{max-width:200px}
   .hero-promise{font-size:1.25rem}
-  .hero-meta{font-size:.7rem;letter-spacing:.18em;display:flex;flex-direction:column;align-items:center;gap:.4rem;text-align:center}
-  .hero-meta-row{display:inline-flex;justify-content:center;gap:.55rem;white-space:nowrap}
-  .hero-meta-sep{display:none}
+  .hero-meta{font-size:.7rem;letter-spacing:.18em;flex-direction:column;align-items:center;justify-content:center;gap:.4rem;text-align:center}
+  .hero-meta-row{justify-content:center}
+  .hero-meta-row + .hero-meta-row::before{display:none}
   .endorse-form-wrap{padding:1.2rem 1rem}
   .priority-row{grid-template-columns:60px 1fr;gap:1rem;padding:1.8rem .2rem}
   .priority-num{font-size:1.8rem}
@@ -481,7 +481,7 @@ footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(
         <span class="hero-tagline"><span>Experience</span><span class="hero-tagline-dot">&bull;</span><span>Integrity</span><span class="hero-tagline-dot">&bull;</span><span>Justice</span></span>
         <span class="hero-promise">Restored to the people of <em>Yakima County</em>.</span>
       </p>
-      <div class="hero-meta"><span class="hero-meta-row"><span class="hero-meta-label">Primary</span><span class="hero-meta-date">Aug&nbsp;4,&nbsp;2026</span></span><span class="hero-meta-sep" aria-hidden="true">·</span><span class="hero-meta-row"><span class="hero-meta-label">General</span><span class="hero-meta-date">Nov&nbsp;3,&nbsp;2026</span></span></div>
+      <div class="hero-meta"><span class="hero-meta-row"><span class="hero-meta-label">Primary</span><span class="hero-meta-date">Aug&nbsp;4,&nbsp;2026</span></span><span class="hero-meta-row"><span class="hero-meta-label">General</span><span class="hero-meta-date">Nov&nbsp;3,&nbsp;2026</span></span></div>
     </div>
     <div class="hero-ctas">
       <!-- TODO HANDOFF: real donate URL -->
