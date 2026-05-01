@@ -68,8 +68,10 @@ h1,h2,h3,h4{font-family:'Playfair Display',Georgia,serif;font-weight:600;letter-
 /* Nav */
 #nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:0 5%;height:72px;background:#fff;border-bottom:1px solid var(--rule);transition:box-shadow .2s ease}
 #nav.scrolled{box-shadow:0 4px 20px rgba(0,0,0,0.06)}
-.nav-logo{flex-shrink:0;font-family:'Playfair Display',serif;font-weight:600;font-size:1.5rem;letter-spacing:.02em;color:var(--ink);display:flex;align-items:baseline;gap:.5rem}
-.nav-logo .nav-logo-mark{font-style:italic;color:var(--primary);font-weight:500;font-size:1.2rem}
+.nav-logo{flex-shrink:0;color:var(--ink);display:inline-flex;align-items:center;gap:.7rem;line-height:1}
+.nav-logo-name{font-family:'Playfair Display',Georgia,serif;font-weight:700;font-size:1.5rem;letter-spacing:-.01em;line-height:1}
+.nav-logo-sub{font-family:'Inter',sans-serif;font-weight:700;font-size:.62rem;letter-spacing:.32em;text-transform:uppercase;color:var(--text-muted);padding-left:.7rem;border-left:1px solid var(--rule);align-self:center}
+.nav-logo-badge{flex-shrink:0;width:24px;height:24px;background:var(--primary);color:#fff;display:inline-flex;align-items:center;justify-content:center;font-family:'Inter',sans-serif;font-weight:800;font-size:.8rem;letter-spacing:0;border-radius:2px}
 .nav-links{display:flex;align-items:center;gap:2.2rem;flex-shrink:0}
 .nav-links a:not(.nav-donate){font-size:.78rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--text);transition:color .15s ease;position:relative;padding:.4rem 0}
 .nav-links a:not(.nav-donate)::after{content:'';position:absolute;left:0;right:0;bottom:-2px;height:1px;background:var(--primary);transform:scaleX(0);transform-origin:left;transition:transform .25s ease}
@@ -386,9 +388,11 @@ footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(
 @media (max-width:768px){
   .nav-links{display:none}
   .nav-toggle{display:flex}
-  #nav{padding:0 4%;gap:.6rem}
-  .nav-logo{font-size:1rem;letter-spacing:0;gap:.3rem;flex:1;min-width:0}
-  .nav-logo .nav-logo-mark{font-size:.85rem}
+  #nav{padding:0 4%;gap:.5rem}
+  .nav-logo{gap:.5rem}
+  .nav-logo-name{font-size:1.15rem}
+  .nav-logo-sub{display:none}
+  .nav-logo-badge{width:22px;height:22px;font-size:.72rem}
   section{padding:5rem 6%}
   .priority-row{grid-template-columns:80px 1fr;gap:1.4rem;padding:2.2rem .4rem}
   .priority-row:hover{padding-left:.8rem}
@@ -411,8 +415,7 @@ footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(
 @media (max-width:400px){
   section{padding:4rem 5%}
   .about-copy h2{font-size:2rem}
-  .nav-logo{font-size:.85rem}
-  .nav-logo .nav-logo-mark{font-size:.7rem}
+  .nav-logo-name{font-size:1.05rem}
   .hero-brand{padding:2rem 5%}
   .hero-logo{max-width:200px}
   .hero-promise{font-size:1.25rem}
@@ -439,7 +442,7 @@ footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(
 
 <!-- Nav -->
 <header id="nav">
-  <a href="#" class="nav-logo" aria-label="Tyler Haueter for Yakima County Prosecutor · Republican">Haueter <span class="nav-logo-mark">/ Prosecutor / Republican</span></a>
+  <a href="#" class="nav-logo" aria-label="Tyler Haueter for Yakima County Prosecutor · Republican"><span class="nav-logo-name">Haueter</span><span class="nav-logo-sub">Prosecutor &middot; Yakima County</span><span class="nav-logo-badge" aria-hidden="true">R</span></a>
   <div class="nav-links">
     <a href="#priorities">Priorities</a>
     <a href="#about">About</a>
