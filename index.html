@@ -387,8 +387,8 @@ footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(
   .nav-links{display:none}
   .nav-toggle{display:flex}
   #nav{padding:0 4%;gap:.6rem}
-  .nav-logo{font-size:1.25rem}
-  .nav-logo .nav-logo-mark{display:none}
+  .nav-logo{font-size:1rem;letter-spacing:0;gap:.3rem;flex:1;min-width:0}
+  .nav-logo .nav-logo-mark{font-size:.85rem}
   section{padding:5rem 6%}
   .priority-row{grid-template-columns:80px 1fr;gap:1.4rem;padding:2.2rem .4rem}
   .priority-row:hover{padding-left:.8rem}
@@ -411,7 +411,8 @@ footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(
 @media (max-width:400px){
   section{padding:4rem 5%}
   .about-copy h2{font-size:2rem}
-  .nav-logo{font-size:1.1rem}
+  .nav-logo{font-size:.85rem}
+  .nav-logo .nav-logo-mark{font-size:.7rem}
   .hero-brand{padding:2rem 5%}
   .hero-logo{max-width:200px}
   .hero-promise{font-size:1.25rem}
