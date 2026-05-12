@@ -1,40 +1,82 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1235 650">
-  <!-- True US flag proportions (19:10). 13 stripes, top red. Canton = 7 stripes tall, 2/5 width. 50 stars in 9 rows (6-5-6-5-6-5-6-5-6). -->
-  <rect width="1235" height="650" fill="#B22234"/>
-  <!-- 6 white stripes -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice">
+  <!-- Red background = 7 red stripes -->
+  <rect width="100" height="100" fill="#B22234"/>
+  <!-- 6 white stripes (stripe height = 100/13 = 7.6923) -->
   <g fill="#FFFFFF">
-    <rect y="50"  width="1235" height="50"/>
-    <rect y="150" width="1235" height="50"/>
-    <rect y="250" width="1235" height="50"/>
-    <rect y="350" width="1235" height="50"/>
-    <rect y="450" width="1235" height="50"/>
-    <rect y="550" width="1235" height="50"/>
+    <rect y="7.6923"  width="100" height="7.6923"/>
+    <rect y="23.0769" width="100" height="7.6923"/>
+    <rect y="38.4615" width="100" height="7.6923"/>
+    <rect y="53.8462" width="100" height="7.6923"/>
+    <rect y="69.2308" width="100" height="7.6923"/>
+    <rect y="84.6154" width="100" height="7.6923"/>
   </g>
-  <!-- Canton -->
-  <rect width="494" height="350" fill="#3C3B6E"/>
-  <!-- 50 stars: rows of 6 and 5 alternating, 9 rows total -->
-  <g fill="#FFFFFF">
-    <!-- Star path template stamped via symbol -->
-    <symbol id="s" viewBox="-15 -15 30 30" overflow="visible">
-      <polygon points="0,-14 3.3,-4.3 13.3,-4.3 5.2,1.6 8.5,11.3 0,5.4 -8.5,11.3 -5.2,1.6 -13.3,-4.3 -3.3,-4.3"/>
+  <!-- Canton (7 stripes tall, 40% wide) -->
+  <rect width="40" height="53.8462" fill="#3C3B6E"/>
+  <!-- 50 stars: 9 rows alternating 6 and 5 -->
+  <defs>
+    <symbol id="star" viewBox="-5 -5 10 10" overflow="visible">
+      <polygon fill="#FFFFFF" points="0,-4.7 1.07,-1.45 4.47,-1.45 1.73,0.55 2.76,3.8 0,1.85 -2.76,3.8 -1.73,0.55 -4.47,-1.45 -1.07,-1.45"/>
     </symbol>
-    <!-- Row 1 (y=35) — 6 stars -->
-    <use href="#s" x="41"  y="35"/><use href="#s" x="123" y="35"/><use href="#s" x="206" y="35"/><use href="#s" x="288" y="35"/><use href="#s" x="370" y="35"/><use href="#s" x="453" y="35"/>
-    <!-- Row 2 (y=70) — 5 stars -->
-    <use href="#s" x="82"  y="70"/><use href="#s" x="165" y="70"/><use href="#s" x="247" y="70"/><use href="#s" x="329" y="70"/><use href="#s" x="411" y="70"/>
-    <!-- Row 3 (y=105) — 6 stars -->
-    <use href="#s" x="41"  y="105"/><use href="#s" x="123" y="105"/><use href="#s" x="206" y="105"/><use href="#s" x="288" y="105"/><use href="#s" x="370" y="105"/><use href="#s" x="453" y="105"/>
-    <!-- Row 4 (y=140) — 5 stars -->
-    <use href="#s" x="82"  y="140"/><use href="#s" x="165" y="140"/><use href="#s" x="247" y="140"/><use href="#s" x="329" y="140"/><use href="#s" x="411" y="140"/>
-    <!-- Row 5 (y=175) — 6 stars -->
-    <use href="#s" x="41"  y="175"/><use href="#s" x="123" y="175"/><use href="#s" x="206" y="175"/><use href="#s" x="288" y="175"/><use href="#s" x="370" y="175"/><use href="#s" x="453" y="175"/>
-    <!-- Row 6 (y=210) — 5 stars -->
-    <use href="#s" x="82"  y="210"/><use href="#s" x="165" y="210"/><use href="#s" x="247" y="210"/><use href="#s" x="329" y="210"/><use href="#s" x="411" y="210"/>
-    <!-- Row 7 (y=245) — 6 stars -->
-    <use href="#s" x="41"  y="245"/><use href="#s" x="123" y="245"/><use href="#s" x="206" y="245"/><use href="#s" x="288" y="245"/><use href="#s" x="370" y="245"/><use href="#s" x="453" y="245"/>
-    <!-- Row 8 (y=280) — 5 stars -->
-    <use href="#s" x="82"  y="280"/><use href="#s" x="165" y="280"/><use href="#s" x="247" y="280"/><use href="#s" x="329" y="280"/><use href="#s" x="411" y="280"/>
-    <!-- Row 9 (y=315) — 6 stars -->
-    <use href="#s" x="41"  y="315"/><use href="#s" x="123" y="315"/><use href="#s" x="206" y="315"/><use href="#s" x="288" y="315"/><use href="#s" x="370" y="315"/><use href="#s" x="453" y="315"/>
+  </defs>
+  <g>
+    <!-- Row 1 (y=2.99) — 6 stars -->
+    <use href="#star" x="3.33"  y="2.99" width="3" height="3"/>
+    <use href="#star" x="10"    y="2.99" width="3" height="3"/>
+    <use href="#star" x="16.67" y="2.99" width="3" height="3"/>
+    <use href="#star" x="23.33" y="2.99" width="3" height="3"/>
+    <use href="#star" x="30"    y="2.99" width="3" height="3"/>
+    <use href="#star" x="36.67" y="2.99" width="3" height="3"/>
+    <!-- Row 2 (y=8.98) — 5 stars -->
+    <use href="#star" x="6.67"  y="8.98" width="3" height="3"/>
+    <use href="#star" x="13.33" y="8.98" width="3" height="3"/>
+    <use href="#star" x="20"    y="8.98" width="3" height="3"/>
+    <use href="#star" x="26.67" y="8.98" width="3" height="3"/>
+    <use href="#star" x="33.33" y="8.98" width="3" height="3"/>
+    <!-- Row 3 (y=14.96) — 6 stars -->
+    <use href="#star" x="3.33"  y="14.96" width="3" height="3"/>
+    <use href="#star" x="10"    y="14.96" width="3" height="3"/>
+    <use href="#star" x="16.67" y="14.96" width="3" height="3"/>
+    <use href="#star" x="23.33" y="14.96" width="3" height="3"/>
+    <use href="#star" x="30"    y="14.96" width="3" height="3"/>
+    <use href="#star" x="36.67" y="14.96" width="3" height="3"/>
+    <!-- Row 4 (y=20.94) — 5 stars -->
+    <use href="#star" x="6.67"  y="20.94" width="3" height="3"/>
+    <use href="#star" x="13.33" y="20.94" width="3" height="3"/>
+    <use href="#star" x="20"    y="20.94" width="3" height="3"/>
+    <use href="#star" x="26.67" y="20.94" width="3" height="3"/>
+    <use href="#star" x="33.33" y="20.94" width="3" height="3"/>
+    <!-- Row 5 (y=26.92) — 6 stars -->
+    <use href="#star" x="3.33"  y="26.92" width="3" height="3"/>
+    <use href="#star" x="10"    y="26.92" width="3" height="3"/>
+    <use href="#star" x="16.67" y="26.92" width="3" height="3"/>
+    <use href="#star" x="23.33" y="26.92" width="3" height="3"/>
+    <use href="#star" x="30"    y="26.92" width="3" height="3"/>
+    <use href="#star" x="36.67" y="26.92" width="3" height="3"/>
+    <!-- Row 6 (y=32.91) — 5 stars -->
+    <use href="#star" x="6.67"  y="32.91" width="3" height="3"/>
+    <use href="#star" x="13.33" y="32.91" width="3" height="3"/>
+    <use href="#star" x="20"    y="32.91" width="3" height="3"/>
+    <use href="#star" x="26.67" y="32.91" width="3" height="3"/>
+    <use href="#star" x="33.33" y="32.91" width="3" height="3"/>
+    <!-- Row 7 (y=38.89) — 6 stars -->
+    <use href="#star" x="3.33"  y="38.89" width="3" height="3"/>
+    <use href="#star" x="10"    y="38.89" width="3" height="3"/>
+    <use href="#star" x="16.67" y="38.89" width="3" height="3"/>
+    <use href="#star" x="23.33" y="38.89" width="3" height="3"/>
+    <use href="#star" x="30"    y="38.89" width="3" height="3"/>
+    <use href="#star" x="36.67" y="38.89" width="3" height="3"/>
+    <!-- Row 8 (y=44.87) — 5 stars -->
+    <use href="#star" x="6.67"  y="44.87" width="3" height="3"/>
+    <use href="#star" x="13.33" y="44.87" width="3" height="3"/>
+    <use href="#star" x="20"    y="44.87" width="3" height="3"/>
+    <use href="#star" x="26.67" y="44.87" width="3" height="3"/>
+    <use href="#star" x="33.33" y="44.87" width="3" height="3"/>
+    <!-- Row 9 (y=50.86) — 6 stars -->
+    <use href="#star" x="3.33"  y="50.86" width="3" height="3"/>
+    <use href="#star" x="10"    y="50.86" width="3" height="3"/>
+    <use href="#star" x="16.67" y="50.86" width="3" height="3"/>
+    <use href="#star" x="23.33" y="50.86" width="3" height="3"/>
+    <use href="#star" x="30"    y="50.86" width="3" height="3"/>
+    <use href="#star" x="36.67" y="50.86" width="3" height="3"/>
   </g>
 </svg>
