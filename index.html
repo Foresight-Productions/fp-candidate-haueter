@@ -33,6 +33,7 @@
     {
       "@type": "Person",
       "@id": "https://tylerforyakima.com/#person",
+      "additionalType": "https://www.wikidata.org/wiki/Q618307",
       "name": "Tyler Haueter",
       "givenName": "Tyler",
       "familyName": "Haueter",
@@ -109,6 +110,22 @@
       "inLanguage": "en-US"
     },
     {
+      "@type": "WebPage",
+      "@id": "https://tylerforyakima.com/#webpage",
+      "url": "https://tylerforyakima.com/",
+      "name": "Tyler Haueter for Yakima County Prosecutor | Republican · 2026",
+      "isPartOf": { "@id": "https://tylerforyakima.com/#website" },
+      "about": { "@id": "https://tylerforyakima.com/#person" },
+      "primaryImageOfPage": "https://tylerforyakima.com/og-image.jpg",
+      "datePublished": "2026-04-28",
+      "dateModified": "2026-05-19",
+      "inLanguage": "en-US",
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [".hero-promise", ".about-copy p.lead", ".priorities-list"]
+      }
+    },
+    {
       "@type": "Event",
       "name": "2026 Yakima County Prosecutor Primary Election",
       "startDate": "2026-08-04",
@@ -155,6 +172,10 @@
     {
       "@type": "FAQPage",
       "@id": "https://tylerforyakima.com/#faq",
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "xpath": ["/html/head/title", "//*[@itemprop='name']", "//*[@itemprop='text']"]
+      },
       "mainEntity": [
         {
           "@type": "Question",
