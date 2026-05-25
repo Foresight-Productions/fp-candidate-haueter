@@ -31,6 +31,46 @@
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": "ImageObject",
+      "@id": "https://tylerforyakima.com/#headshot",
+      "url": "https://tylerforyakima.com/headshot.jpg",
+      "contentUrl": "https://tylerforyakima.com/headshot.jpg",
+      "caption": "Tyler Haueter, Republican candidate for Yakima County Prosecutor — official campaign headshot.",
+      "name": "Tyler Haueter official campaign headshot",
+      "creditText": "Tyler for Yakima campaign",
+      "representativeOfPage": false,
+      "isAccessibleForFree": true
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://tylerforyakima.com/#family-photo",
+      "url": "https://tylerforyakima.com/family.jpg",
+      "contentUrl": "https://tylerforyakima.com/family.jpg",
+      "caption": "Tyler Haueter with his wife and seven children, Yakima County, Washington.",
+      "name": "Tyler Haueter family photo",
+      "creditText": "Tyler for Yakima campaign",
+      "isAccessibleForFree": true
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://tylerforyakima.com/#og-image",
+      "url": "https://tylerforyakima.com/og-image.jpg",
+      "contentUrl": "https://tylerforyakima.com/og-image.jpg",
+      "width": 1200,
+      "height": 630,
+      "caption": "Tyler Haueter for Yakima County Prosecutor · Republican · Faith. Family. Justice.",
+      "name": "Tyler Haueter for Yakima County Prosecutor — social share card",
+      "representativeOfPage": true,
+      "isAccessibleForFree": true
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://tylerforyakima.com/#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://tylerforyakima.com/" }
+      ]
+    },
+    {
       "@type": "Person",
       "@id": "https://tylerforyakima.com/#person",
       "additionalType": "https://www.wikidata.org/wiki/Q618307",
@@ -40,7 +80,8 @@
       "jobTitle": "Prosecutor",
       "description": "Republican candidate for Yakima County Prosecutor in the 2026 election. Active prosecutor for the City of Kennewick, Washington. Former Deputy Prosecuting Attorney in the Yakima County Prosecutor's Office Special Assault Unit, where he handled sex crimes, child abuse, and other serious felonies. Air Force veteran, husband, and father of seven.",
       "url": "https://tylerforyakima.com/",
-      "image": "https://tylerforyakima.com/headshot.jpg",
+      "image": { "@id": "https://tylerforyakima.com/#headshot" },
+      "subjectOf": { "@id": "https://tylerforyakima.com/#faq" },
       "worksFor": {
         "@type": "GovernmentOrganization",
         "name": "City of Kennewick",
@@ -116,9 +157,24 @@
       "name": "Tyler Haueter for Yakima County Prosecutor | Republican · 2026",
       "isPartOf": { "@id": "https://tylerforyakima.com/#website" },
       "about": { "@id": "https://tylerforyakima.com/#person" },
-      "primaryImageOfPage": "https://tylerforyakima.com/og-image.jpg",
+      "primaryImageOfPage": { "@id": "https://tylerforyakima.com/#og-image" },
+      "image": [
+        { "@id": "https://tylerforyakima.com/#headshot" },
+        { "@id": "https://tylerforyakima.com/#family-photo" },
+        { "@id": "https://tylerforyakima.com/#og-image" }
+      ],
+      "breadcrumb": { "@id": "https://tylerforyakima.com/#breadcrumb" },
+      "mainEntity": { "@id": "https://tylerforyakima.com/#person" },
+      "mentions": [
+        { "@type": "Thing", "name": "Yakima County, Washington" },
+        { "@type": "Thing", "name": "Yakima County Prosecuting Attorney" },
+        { "@type": "Thing", "name": "2026 Washington State elections" },
+        { "@type": "Thing", "name": "Republican Party" },
+        { "@type": "Thing", "name": "Public safety" },
+        { "@type": "Thing", "name": "Criminal prosecution" }
+      ],
       "datePublished": "2026-04-28",
-      "dateModified": "2026-05-19",
+      "dateModified": "2026-05-24",
       "inLanguage": "en-US",
       "speakable": {
         "@type": "SpeakableSpecification",
@@ -940,6 +996,14 @@ footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(
     </div>
   </div>
 </section>
+
+<!-- SEO image references: hidden but crawlable. The hero family photo and headshot
+     above are CSS background-images and are invisible to image crawlers, so we
+     surface them here with descriptive alt text for Google Images and AI vision tools. -->
+<div aria-hidden="true" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0">
+  <img src="headshot.jpg" alt="Tyler Haueter, Republican candidate for Yakima County Prosecutor — official campaign headshot" width="800" height="1000" loading="lazy">
+  <img src="family.jpg" alt="Tyler Haueter with his wife and seven children in Yakima County, Washington" width="1800" height="838" loading="lazy">
+</div>
 
 <!-- Footer + Compliance -->
 <footer>
