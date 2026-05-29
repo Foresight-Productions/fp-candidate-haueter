@@ -1,7 +1,2 @@
 # Redirect bare /favicon.ico requests to the SVG — fixes Googlebot 404
 /favicon.ico  /favicon.svg  301
-
-# Normalize pretty URLs → .html so canonical tags stay consistent
-/donate               /donate.html              301
-/thanks               /thanks.html              301
-/thanks-endorsement   /thanks-endorsement.html  301
