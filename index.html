@@ -570,7 +570,7 @@ section{padding:8rem 5%}
 .endorse-meta{flex:1;min-width:0}
 .endorse-name{font-family:'Inter',sans-serif;font-size:.92rem;font-weight:700;color:var(--ink);line-height:1.2}
 .endorse-title{font-family:'Inter',sans-serif;font-size:.78rem;color:var(--text-muted);margin-top:.15em;line-height:1.3}
-.endorse-card blockquote{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:.95rem;line-height:1.45;color:var(--ink);margin:0;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden;cursor:pointer;transition:none;position:relative}
+.endorse-card blockquote{font-family:'Inter',sans-serif;font-style:normal;font-size:.9rem;line-height:1.62;color:var(--ink);margin:0;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden;cursor:pointer;transition:none;position:relative}
 .endorse-card blockquote::before{content:'\201C';color:var(--primary);font-size:1.2em;font-style:normal;margin-right:.05em;line-height:0;vertical-align:-.2em}
 .endorse-card blockquote::after{content:'\201D';color:var(--primary);font-size:1.2em;font-style:normal;line-height:0;vertical-align:-.2em}
 .endorse-card blockquote.expanded{-webkit-line-clamp:unset;display:block}
@@ -589,6 +589,12 @@ section{padding:8rem 5%}
 .endorse-featured::before{top:-4px;left:50%;margin-left:-4px}
 .endorse-featured::after{bottom:-4px;left:50%;margin-left:-4px}
 .endorse-featured p{font-family:'Playfair Display',serif;font-style:italic;font-weight:400;font-size:1.4rem;color:var(--text);line-height:1.6}
+.endorse-orgs{max-width:1100px;margin:0 auto 2.6rem}
+.endorse-orgs-label{font-family:'Inter',sans-serif;letter-spacing:.32em;font-size:.7rem;font-weight:700;text-transform:uppercase;color:var(--primary);text-align:center;margin-bottom:1.1rem}
+.endorse-orgs-row{display:flex;flex-wrap:wrap;justify-content:center;gap:1.4rem}
+.org-card{display:flex;align-items:center;gap:1rem;background:#fff;border:1px solid var(--rule);border-left:3px solid var(--primary);padding:1rem 1.5rem 1rem 1.2rem;box-shadow:0 8px 24px -18px rgba(14,14,14,.22)}
+.org-logo{width:66px;height:66px;object-fit:contain;flex-shrink:0}
+.org-name{font-family:'Inter',sans-serif;font-weight:700;font-size:.98rem;color:var(--ink);line-height:1.25;max-width:11rem;text-align:left}
 
 /* Donate banner */
 .donate-banner{background:var(--primary);color:#fff;text-align:center;padding:6.5rem 5%;position:relative}
@@ -953,6 +959,16 @@ footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(
 <section class="endorsements" id="endorsements">
   <div class="section-eyebrow fade-up">Endorsements</div>
   <h2 class="section-title fade-up" style="margin-left:auto;margin-right:auto;text-align:center">Standing with Tyler.</h2>
+
+  <div class="endorse-orgs fade-up">
+    <div class="endorse-orgs-label">Endorsed By</div>
+    <div class="endorse-orgs-row">
+      <div class="org-card">
+        <img src="ycrp-logo.png?v=1" alt="Yakima County Republican Party" class="org-logo" width="66" height="66">
+        <span class="org-name">Yakima County Republican Party</span>
+      </div>
+    </div>
+  </div>
 
   <div class="endorse-grid fade-up">
     <div class="endorse-list" id="endorseList" data-empty="Endorsements coming soon. Be the first to share yours.">
