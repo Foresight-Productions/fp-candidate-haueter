@@ -437,17 +437,32 @@ section{padding:8rem 5%}
 .section-title{font-family:'Playfair Display',serif;font-weight:600;font-size:clamp(2.4rem,5.2vw,4.4rem);margin-bottom:1.6rem;max-width:38rem;letter-spacing:-0.02em}
 .section-title em{font-style:italic;font-weight:500;color:var(--primary)}
 .video-section{background:var(--bg-subtle);padding:4.5rem 5%;border-top:1px solid var(--rule)}
-.video-inner{max-width:940px;margin:0 auto;text-align:center}
+.video-inner{max-width:1160px;margin:0 auto;text-align:center}
 .video-inner .section-eyebrow{justify-content:center;margin-bottom:.6rem}
 .video-inner .section-eyebrow::before{display:none}
 .video-inner .section-title{margin:0 auto 0;text-align:center;font-size:clamp(1.9rem,4vw,3.2rem)}
-.video-grid{display:grid;grid-template-columns:1fr;gap:2.6rem;margin-top:1.9rem}
-.video-item{display:flex;flex-direction:column}
-.video-frame{position:relative;aspect-ratio:16/9;background:#000;border:1px solid var(--rule);box-shadow:0 34px 70px -34px rgba(14,14,14,.45);overflow:hidden}
+.video-grid{display:flex;flex-direction:column;gap:3.8rem;margin-top:2.6rem;text-align:left}
+.video-item{display:grid;grid-template-columns:1.65fr 1fr;gap:2.8rem;align-items:center}
+.video-item:nth-child(even){grid-template-columns:1fr 1.65fr}
+.video-item:nth-child(even) .video-frame{order:2}
+.video-item:nth-child(even) .video-caption{order:1}
+.video-frame{position:relative;aspect-ratio:16/9;background:#000;border:1px solid rgba(14,14,14,.1);box-shadow:0 44px 90px -44px rgba(14,14,14,.6);overflow:hidden}
 .video-frame video{position:absolute;inset:0;width:100%;height:100%;display:block}
-.video-caption{margin-top:1rem;text-align:center}
-.video-title{font-family:'Playfair Display',serif;font-weight:600;font-size:1.35rem;color:var(--ink);margin:0 0 .2rem;letter-spacing:-.01em}
-.video-desc{font-family:'Inter',sans-serif;font-size:.92rem;color:var(--text-muted);margin:0;line-height:1.5;max-width:34rem;margin-left:auto;margin-right:auto}
+.video-caption{max-width:26rem}
+.video-item:nth-child(even) .video-caption{margin-left:auto}
+.video-kicker{font-family:'Inter',sans-serif;font-weight:700;font-size:.7rem;letter-spacing:.28em;text-transform:uppercase;color:var(--primary);margin-bottom:.9rem;display:flex;align-items:center;gap:.75rem}
+.video-kicker::before{content:'';width:28px;height:1px;background:var(--primary)}
+.video-title{font-family:'Playfair Display',serif;font-weight:600;font-size:clamp(1.7rem,2.6vw,2.2rem);color:var(--ink);margin:0;letter-spacing:-.015em;line-height:1.08}
+.video-title em{font-style:italic;color:var(--primary);font-weight:500}
+.video-title::after{content:'';display:block;width:46px;height:2px;background:var(--primary);margin:1.1rem 0}
+.video-desc{font-family:'Inter',sans-serif;font-size:1.02rem;color:var(--text-muted);margin:0;line-height:1.65}
+@media(max-width:820px){
+  .video-item,.video-item:nth-child(even){grid-template-columns:1fr;gap:1.3rem}
+  .video-item:nth-child(even) .video-frame{order:0}
+  .video-item:nth-child(even) .video-caption{order:0;margin-left:0}
+  .video-caption{max-width:none}
+  .video-title::after{margin:.95rem 0}
+}
 .section-lede{font-size:1.18rem;color:var(--text-muted);max-width:42rem;line-height:1.7;font-weight:400}
 
 /* About */
@@ -838,7 +853,8 @@ footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(
           </video>
         </div>
         <div class="video-caption">
-          <h3 class="video-title">Tyler&rsquo;s Story</h3>
+          <div class="video-kicker">Introduction</div>
+          <h3 class="video-title">Tyler&rsquo;s <em>Story</em></h3>
           <p class="video-desc">Air Force veteran and father of seven. Who Tyler is, and why he&rsquo;s running for Yakima County Prosecutor.</p>
         </div>
       </div>
@@ -850,7 +866,8 @@ footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(
           </video>
         </div>
         <div class="video-caption">
-          <h3 class="video-title">Justice and Mercy</h3>
+          <div class="video-kicker">Prosecutorial Judgment</div>
+          <h3 class="video-title">Justice and <em>Mercy</em></h3>
           <p class="video-desc">What years on both sides of the courtroom taught Tyler about a prosecutor&rsquo;s judgment.</p>
         </div>
       </div>
