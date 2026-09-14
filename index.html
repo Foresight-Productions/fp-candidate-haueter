@@ -181,8 +181,8 @@
     {
       "@type": "VideoObject",
       "@id": "https://tylerforyakima.com/#video-2",
-      "name": "Tyler Haueter on Public Safety — Yakima County Prosecutor",
-      "description": "Tyler Haueter, Republican candidate for Yakima County Prosecutor, speaks directly to voters about public safety, accountability, and his plan to restore the prosecutor's office in 2026.",
+      "name": "Justice and Mercy — Tyler Haueter for Yakima County Prosecutor",
+      "description": "Tyler Haueter, Republican candidate for Yakima County Prosecutor, draws on his experience as a defense investigator and prosecutor to explain prosecutorial discretion and the balance between justice and mercy.",
       "thumbnailUrl": "https://tylerforyakima.com/tyler-2-poster.jpg",
       "uploadDate": "2026-09-14",
       "contentUrl": "https://tylerforyakima.com/tyler-2.mp4",
@@ -441,9 +441,13 @@ section{padding:8rem 5%}
 .video-inner .section-eyebrow{justify-content:center;margin-bottom:.6rem}
 .video-inner .section-eyebrow::before{display:none}
 .video-inner .section-title{margin:0 auto 0;text-align:center;font-size:clamp(1.9rem,4vw,3.2rem)}
-.video-grid{display:grid;grid-template-columns:1fr;gap:2rem;margin-top:1.9rem}
+.video-grid{display:grid;grid-template-columns:1fr;gap:2.6rem;margin-top:1.9rem}
+.video-item{display:flex;flex-direction:column}
 .video-frame{position:relative;aspect-ratio:16/9;background:#000;border:1px solid var(--rule);box-shadow:0 34px 70px -34px rgba(14,14,14,.45);overflow:hidden}
 .video-frame video{position:absolute;inset:0;width:100%;height:100%;display:block}
+.video-caption{margin-top:1rem;text-align:center}
+.video-title{font-family:'Playfair Display',serif;font-weight:600;font-size:1.35rem;color:var(--ink);margin:0 0 .2rem;letter-spacing:-.01em}
+.video-desc{font-family:'Inter',sans-serif;font-size:.92rem;color:var(--text-muted);margin:0;line-height:1.5;max-width:34rem;margin-left:auto;margin-right:auto}
 .section-lede{font-size:1.18rem;color:var(--text-muted);max-width:42rem;line-height:1.7;font-weight:400}
 
 /* About */
@@ -826,17 +830,29 @@ footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(
     <div class="section-eyebrow fade-up">Meet Tyler</div>
     <h2 class="section-title fade-up">Hear it in his <em>own words</em>.</h2>
     <div class="video-grid fade-up">
-      <div class="video-frame">
-        <video controls preload="metadata" playsinline poster="tyler-poster.jpg?v=2">
-          <source src="tyler-1.mp4?v=1" type="video/mp4">
-          Your browser doesn&rsquo;t support embedded video. <a href="tyler-1.mp4">Download the video</a>.
-        </video>
+      <div class="video-item">
+        <div class="video-frame">
+          <video controls preload="metadata" playsinline poster="tyler-poster.jpg?v=2">
+            <source src="tyler-1.mp4?v=1" type="video/mp4">
+            Your browser doesn&rsquo;t support embedded video. <a href="tyler-1.mp4">Download the video</a>.
+          </video>
+        </div>
+        <div class="video-caption">
+          <h3 class="video-title">Tyler&rsquo;s Story</h3>
+          <p class="video-desc">Air Force veteran and father of seven. Who Tyler is, and why he&rsquo;s running for Yakima County Prosecutor.</p>
+        </div>
       </div>
-      <div class="video-frame">
-        <video controls preload="metadata" playsinline poster="tyler-2-poster.jpg?v=1">
-          <source src="tyler-2.mp4?v=1" type="video/mp4">
-          Your browser doesn&rsquo;t support embedded video. <a href="tyler-2.mp4">Download the video</a>.
-        </video>
+      <div class="video-item">
+        <div class="video-frame">
+          <video controls preload="metadata" playsinline poster="tyler-2-poster.jpg?v=1">
+            <source src="tyler-2.mp4?v=1" type="video/mp4">
+            Your browser doesn&rsquo;t support embedded video. <a href="tyler-2.mp4">Download the video</a>.
+          </video>
+        </div>
+        <div class="video-caption">
+          <h3 class="video-title">Justice and Mercy</h3>
+          <p class="video-desc">What years on both sides of the courtroom taught Tyler about a prosecutor&rsquo;s judgment.</p>
+        </div>
       </div>
     </div>
   </div>
