@@ -172,59 +172,74 @@ footer{background:var(--ink);color:#fff;padding:4rem 5% 2.4rem}
   .footer-inner{flex-direction:column;text-align:center}
   .footer-links{justify-content:center}
 }
+.lang-switch{display:inline-flex;align-items:center;gap:.35rem;margin-left:.5rem}
+.lang-btn{background:none;border:0;cursor:pointer;font-family:'Inter',sans-serif;font-weight:700;font-size:.72rem;letter-spacing:.12em;color:var(--text-muted);padding:.2rem .15rem;transition:color .15s ease}
+.lang-btn[aria-pressed="true"]{color:var(--primary)}
+.lang-btn:hover{color:var(--primary)}
+.lang-sep{color:var(--rule);font-size:.72rem}
+.nav-overlay .lang-switch{gap:.6rem}
+.nav-overlay .lang-btn{font-size:1.05rem}
+.nav-overlay .lang-sep{font-size:1.05rem}
+@media (max-width:1080px){.nav-logo-sub{display:none}}
 </style>
 </head>
 <body>
 
 <!-- Nav -->
 <header id="nav">
-  <a href="/" class="nav-logo" aria-label="Tyler Haueter for Yakima County Prosecutor"><span class="nav-logo-name">Haueter</span><span class="nav-logo-sub">Prosecutor &middot; Yakima County</span><span class="nav-logo-badge" aria-hidden="true">R</span></a>
+  <a href="/" class="nav-logo" aria-label="Tyler Haueter for Yakima County Prosecutor"><span class="nav-logo-name">Haueter</span><span class="nav-logo-sub" data-i18n="nav.logosub">Prosecutor &middot; Yakima County</span><span class="nav-logo-badge" aria-hidden="true">R</span></a>
   <div class="nav-links">
-    <a href="/#priorities">Priorities</a>
-    <a href="/#about">About</a>
-    <a href="/#endorsements">Endorsements</a>
-    <a href="/#contact">Contact</a>
-    <a href="/donate" class="nav-donate is-current" aria-current="page">Donate</a>
+    <a href="/#priorities" data-i18n="nav.priorities">Priorities</a>
+    <a href="/#about" data-i18n="nav.about">About</a>
+    <a href="/#endorsements" data-i18n="nav.endorsements">Endorsements</a>
+    <a href="/#contact" data-i18n="nav.contact">Contact</a>
+    <a href="/donate" class="nav-donate is-current" aria-current="page" data-i18n="nav.donate">Donate</a>
+    <div class="lang-switch" role="group" aria-label="Language / Idioma">
+      <button type="button" class="lang-btn" data-lang="en" aria-pressed="true">EN</button><span class="lang-sep" aria-hidden="true">·</span><button type="button" class="lang-btn" data-lang="es" aria-pressed="false">ES</button>
+    </div>
   </div>
   <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
     <span></span><span></span><span></span>
   </button>
 </header>
 <div class="nav-overlay" aria-hidden="true">
-  <a href="/#priorities">Priorities</a>
-  <a href="/#about">About</a>
-  <a href="/#endorsements">Endorsements</a>
-  <a href="/#contact">Contact</a>
-  <a href="/donate" class="nav-donate" style="margin-top:.6rem">Donate</a>
+  <a href="/#priorities" data-i18n="nav.priorities">Priorities</a>
+  <a href="/#about" data-i18n="nav.about">About</a>
+  <a href="/#endorsements" data-i18n="nav.endorsements">Endorsements</a>
+  <a href="/#contact" data-i18n="nav.contact">Contact</a>
+  <a href="/donate" class="nav-donate" style="margin-top:.6rem" data-i18n="nav.donate">Donate</a>
+  <div class="lang-switch" role="group" aria-label="Language / Idioma" style="margin-top:1.1rem">
+    <button type="button" class="lang-btn" data-lang="en" aria-pressed="true">EN</button><span class="lang-sep" aria-hidden="true">·</span><button type="button" class="lang-btn" data-lang="es" aria-pressed="false">ES</button>
+  </div>
 </div>
 
 <!-- Donate split -->
 <section class="donate-split">
   <div class="donate-split-inner">
     <div class="donate-pitch">
-      <span class="donate-eyebrow">Support the Campaign</span>
-      <h1>Stand for <em>experience.</em><br>Stand for <em>justice.</em></h1>
-      <p class="lede">Your contribution puts an experienced prosecutor back in the courtroom — and back to work for the people of Yakima County. Every dollar fuels the doors we knock, the signs we plant, and the message we carry to voters.</p>
+      <span class="donate-eyebrow" data-i18n="don.eyebrow">Support the Campaign</span>
+      <h1 data-i18n-html="don.h1">Stand for <em>experience.</em><br>Stand for <em>justice.</em></h1>
+      <p class="lede" data-i18n="don.lede">Your contribution puts an experienced prosecutor back in the courtroom — and back to work for the people of Yakima County. Every dollar fuels the doors we knock, the signs we plant, and the message we carry to voters.</p>
       <ul class="donate-impact">
-        <li><span class="amount">$25</span><span class="what">Yard signs that put our message on lawns across the county.</span></li>
-        <li><span class="amount">$100</span><span class="what">Mail pieces delivered to undecided primary voters.</span></li>
-        <li><span class="amount">$250</span><span class="what">Digital ads that reach Yakima families where they already are.</span></li>
-        <li><span class="amount">$500</span><span class="what">A full week of voter outreach — door-knocking, phones, and events.</span></li>
+        <li><span class="amount">$25</span><span class="what" data-i18n="don.imp1">Yard signs that put our message on lawns across the county.</span></li>
+        <li><span class="amount">$100</span><span class="what" data-i18n="don.imp2">Mail pieces delivered to undecided primary voters.</span></li>
+        <li><span class="amount">$250</span><span class="what" data-i18n="don.imp3">Digital ads that reach Yakima families where they already are.</span></li>
+        <li><span class="amount">$500</span><span class="what" data-i18n="don.imp4">A full week of voter outreach — door-knocking, phones, and events.</span></li>
       </ul>
       <div class="donate-check">
-        <span class="label">Prefer to mail a check?</span>
-        <h3>Send your contribution by mail.</h3>
-        <p>Make checks payable to <strong>Tyler for Yakima</strong> and mail to:</p>
+        <span class="label" data-i18n="don.checklabel">Prefer to mail a check?</span>
+        <h3 data-i18n="don.checkh3">Send your contribution by mail.</h3>
+        <p data-i18n-html="don.checkp">Make checks payable to <strong>Tyler for Yakima</strong> and mail to:</p>
         <address class="check-address">
           <strong>Tyler for Yakima</strong>
           PO Box 9403<br>
           Yakima, WA 98909
         </address>
-        <p class="check-note">Please include your full name, mailing address, occupation, and employer on the memo line or an enclosed note — Washington PDC reporting requires it for every contribution.</p>
+        <p class="check-note" data-i18n="don.checknote">Please include your full name, mailing address, occupation, and employer on the memo line or an enclosed note — Washington PDC reporting requires it for every contribution.</p>
       </div>
       <div class="donate-compliance">
-        <strong>Contributions are not tax deductible.</strong>
-        Paid for by Tyler for Yakima. Reporting to the Washington State <a href="https://www.pdc.wa.gov/" style="text-decoration:underline">Public Disclosure Commission</a>.
+        <strong data-i18n="don.notax">Contributions are not tax deductible.</strong>
+        <span data-i18n-html="foot.paidfor">Paid for by Tyler for Yakima. Reporting to the Washington State <a href="https://www.pdc.wa.gov/" style="text-decoration:underline">Public Disclosure Commission</a>.</span>
       </div>
     </div>
 
@@ -249,23 +264,40 @@ footer{background:var(--ink);color:#fff;padding:4rem 5% 2.4rem}
 <!-- Footer -->
 <footer>
   <div class="footer-inner">
-    <div class="footer-brand"><span class="name">Haueter</span> <em>for Yakima County</em></div>
+    <div class="footer-brand"><span class="name">Haueter</span> <em data-i18n="foot.for">for Yakima County</em></div>
     <ul class="footer-links">
-      <li><a href="/#priorities">Priorities</a></li>
-      <li><a href="/#about">About</a></li>
-      <li><a href="/#endorsements">Endorsements</a></li>
-      <li><a href="/#contact">Contact</a></li>
+      <li><a href="/#priorities" data-i18n="nav.priorities">Priorities</a></li>
+      <li><a href="/#about" data-i18n="nav.about">About</a></li>
+      <li><a href="/#endorsements" data-i18n="nav.endorsements">Endorsements</a></li>
+      <li><a href="/#contact" data-i18n="nav.contact">Contact</a></li>
       <li><a href="https://www.facebook.com/tylerforyakima" target="_blank" rel="noopener">Facebook</a></li>
-      <li><a href="/donate">Donate</a></li>
+      <li><a href="/donate" data-i18n="nav.donate">Donate</a></li>
     </ul>
   </div>
-  <div class="compliance">
+  <div class="compliance" data-i18n-html="foot.compliance">
     Paid for by Tyler for Yakima. Reporting to the Washington State <a href="https://www.pdc.wa.gov/" style="text-decoration:underline">Public Disclosure Commission</a>.<br>
     © 2026 Tyler Haueter for Yakima County Prosecutor. All rights reserved.
   </div>
 </footer>
 
 <script>
+// ---- Bilingual (EN/ES) ----
+const I18N = { es: {
+  "nav.logosub":"Fiscal · Condado de Yakima","nav.priorities":"Prioridades","nav.about":"Biografía","nav.endorsements":"Apoyos","nav.contact":"Contacto","nav.donate":"Donar",
+  "foot.for":"para el Condado de Yakima","foot.compliance":"Pagado por Tyler for Yakima. Se reporta a la <a href=\"https://www.pdc.wa.gov/\" style=\"text-decoration:underline\">Comisión de Divulgación Pública</a> del Estado de Washington.<br>© 2026 Tyler Haueter para Fiscal del Condado de Yakima. Todos los derechos reservados.","foot.paidfor":"Pagado por Tyler for Yakima. Se reporta a la <a href=\"https://www.pdc.wa.gov/\" style=\"text-decoration:underline\">Comisión de Divulgación Pública</a> del Estado de Washington.",
+  "don.eyebrow":"Apoya la Campaña","don.h1":"Defiende la <em>experiencia.</em><br>Defiende la <em>justicia.</em>","don.lede":"Tu contribución devuelve a un fiscal con experiencia a la sala del tribunal y al trabajo por la gente del Condado de Yakima. Cada dólar impulsa las puertas que tocamos, los letreros que colocamos y el mensaje que llevamos a los votantes.","don.imp1":"Letreros de jardín que llevan nuestro mensaje a los jardines de todo el condado.","don.imp2":"Correos enviados a votantes indecisos de la primaria.","don.imp3":"Anuncios digitales que llegan a las familias de Yakima donde ya están.","don.imp4":"Una semana completa de contacto con votantes: tocar puertas, llamadas y eventos.","don.checklabel":"¿Prefiere enviar un cheque por correo?","don.checkh3":"Envíe su contribución por correo.","don.checkp":"Haga los cheques a nombre de <strong>Tyler for Yakima</strong> y envíelos a:","don.checknote":"Incluya su nombre completo, dirección postal, ocupación y empleador en la nota del cheque o en una nota adjunta. La PDC de Washington lo exige para cada contribución.","don.notax":"Las contribuciones no son deducibles de impuestos."
+}};
+function setLang(lang){
+  const dict = lang==='es' ? I18N.es : null;
+  document.documentElement.lang = lang; document.documentElement.setAttribute('data-lang', lang);
+  document.querySelectorAll('[data-i18n]').forEach(el=>{ const k=el.getAttribute('data-i18n'); if(el.__en==null) el.__en=el.textContent; el.textContent=(dict&&dict[k]!=null)?dict[k]:el.__en; });
+  document.querySelectorAll('[data-i18n-html]').forEach(el=>{ const k=el.getAttribute('data-i18n-html'); if(el.__enHtml==null) el.__enHtml=el.innerHTML; el.innerHTML=(dict&&dict[k]!=null)?dict[k]:el.__enHtml; });
+  document.querySelectorAll('.lang-btn').forEach(b=>b.setAttribute('aria-pressed', b.dataset.lang===lang?'true':'false'));
+  window.__lang=lang; try{ localStorage.setItem('lang', lang);}catch(e){}
+}
+document.querySelectorAll('.lang-btn').forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.lang)));
+(function(){ let s=null; try{ s=localStorage.getItem('lang'); }catch(e){} const auto=((navigator.language||navigator.userLanguage||'')+'').toLowerCase().indexOf('es')===0?'es':'en'; setLang(s||auto); })();
+
 const nav=document.getElementById('nav');
 window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>24)});
 const toggle=document.querySelector('.nav-toggle');
