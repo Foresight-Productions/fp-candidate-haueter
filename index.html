@@ -642,11 +642,12 @@ section{padding:8rem 5%}
 .endorse-featured p{font-family:'Playfair Display',serif;font-style:italic;font-weight:400;font-size:1.4rem;color:var(--text);line-height:1.6}
 .endorse-orgs{max-width:1100px;margin:0 auto 3.2rem}
 .endorse-orgs-label{font-family:'Inter',sans-serif;letter-spacing:.34em;font-size:.82rem;font-weight:700;text-transform:uppercase;color:var(--primary);text-align:center;margin-bottom:1.5rem}
-.endorse-orgs-row{display:flex;flex-wrap:wrap;justify-content:center;gap:1.8rem}
-.org-card{display:flex;align-items:center;gap:1.7rem;background:#fff;border:1px solid var(--rule);border-left:5px solid var(--primary);padding:1.8rem 2.6rem 1.8rem 2.1rem;box-shadow:0 16px 40px -22px rgba(14,14,14,.3)}
-.org-logo{width:132px;height:132px;object-fit:contain;flex-shrink:0}
-.org-name{font-family:'Inter',sans-serif;font-weight:800;font-size:1.45rem;color:var(--ink);line-height:1.2;max-width:13rem;text-align:left;letter-spacing:-.01em}
-@media(max-width:560px){.org-card{flex-direction:column;text-align:center;gap:1rem;padding:1.8rem 2rem}.org-logo{width:120px;height:120px}.org-name{text-align:center;max-width:none;font-size:1.3rem}}
+.endorse-orgs-row{display:flex;flex-wrap:wrap;justify-content:center;align-items:stretch;gap:1.6rem}
+.org-card{flex:1 1 300px;max-width:440px;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:1.15rem;background:#fff;border:1px solid var(--rule);border-top:4px solid var(--primary);padding:2rem 2rem 1.6rem;box-shadow:0 16px 40px -22px rgba(14,14,14,.3)}
+.org-logo-wrap{height:96px;width:100%;display:flex;align-items:center;justify-content:center}
+.org-logo{max-height:96px;width:auto;max-width:100%;object-fit:contain;display:block}
+.org-name{font-family:'Inter',sans-serif;font-weight:700;font-size:1rem;color:var(--ink);line-height:1.35;max-width:16rem;text-align:center;letter-spacing:-.005em}
+@media(max-width:560px){.org-card{flex-basis:100%}}
 
 /* Donate banner */
 .donate-banner{background:var(--primary);color:#fff;text-align:center;padding:6.5rem 5%;position:relative}
@@ -1054,8 +1055,12 @@ footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(
     <div class="endorse-orgs-label">Endorsed By</div>
     <div class="endorse-orgs-row">
       <div class="org-card">
-        <img src="ycrp-logo.png?v=1" alt="Yakima County Republican Party" class="org-logo" width="66" height="66">
+        <div class="org-logo-wrap"><img src="ycrp-logo.png?v=1" alt="Yakima County Republican Party" class="org-logo" width="96" height="96"></div>
         <span class="org-name">Yakima County Republican Party</span>
+      </div>
+      <div class="org-card">
+        <div class="org-logo-wrap"><img src="lavoz-logo.png?v=1" alt="La Voz, El Portavoz de la Comunidad Latina" class="org-logo" width="298" height="96"></div>
+        <span class="org-name">La Voz &middot; Latino Community Newspaper</span>
       </div>
     </div>
   </div>
