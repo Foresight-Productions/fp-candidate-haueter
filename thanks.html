@@ -29,14 +29,18 @@ footer{padding:1.6rem 1.5rem;text-align:center;font-size:.78rem;color:var(--text
 </head>
 <body>
 <main class="wrap">
-  <div class="eyebrow">Thank You</div>
-  <h1>You're <em>in</em>.</h1>
+  <div class="eyebrow" data-i18n="th.eyebrow">Thank You</div>
+  <h1 data-i18n-html="th.h1">You're <em>in</em>.</h1>
   <div class="divider"></div>
-  <p class="lede">Thanks for signing up. The team will be in touch soon with next steps.</p>
-  <a href="/" class="btn">Back to homepage</a>
+  <p class="lede" data-i18n="th.lede">Thanks for signing up. The team will be in touch soon with next steps.</p>
+  <a href="/" class="btn" data-i18n="th.btn">Back to homepage</a>
 </main>
-<footer>
+<footer data-i18n="th.foot">
   &copy; 2026 Tyler Haueter for Yakima County Prosecutor. All rights reserved.
 </footer>
+<script>
+const I18N={es:{"th.eyebrow":"Gracias","th.h1":"Ya estás <em>dentro</em>.","th.lede":"Gracias por inscribirte. El equipo se comunicará pronto contigo con los próximos pasos.","th.btn":"Volver al inicio","th.foot":"© 2026 Tyler Haueter para Fiscal del Condado de Yakima. Todos los derechos reservados."}};
+(function(){let s=null;try{s=localStorage.getItem('lang');}catch(e){}const lang=s||(((navigator.language||'')+'').toLowerCase().indexOf('es')===0?'es':'en');const d=lang==='es'?I18N.es:null;document.documentElement.lang=lang;document.querySelectorAll('[data-i18n]').forEach(el=>{const k=el.getAttribute('data-i18n');if(d&&d[k]!=null)el.textContent=d[k];});document.querySelectorAll('[data-i18n-html]').forEach(el=>{const k=el.getAttribute('data-i18n-html');if(d&&d[k]!=null)el.innerHTML=d[k];});})();
+</script>
 </body>
 </html>
