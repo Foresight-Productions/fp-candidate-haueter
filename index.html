@@ -384,7 +384,7 @@ h1,h2,h3,h4{font-family:'Playfair Display',Georgia,serif;font-weight:600;letter-
 .nav-logo-name{font-family:'Playfair Display',Georgia,serif;font-weight:700;font-size:1.5rem;letter-spacing:-.01em;line-height:1}
 .nav-logo-sub{font-family:'Inter',sans-serif;font-weight:700;font-size:.62rem;letter-spacing:.32em;text-transform:uppercase;color:var(--text-muted);padding-left:.7rem;border-left:1px solid var(--rule);align-self:center}
 .nav-logo-badge{flex-shrink:0;width:24px;height:24px;background:var(--primary);color:#fff;display:inline-flex;align-items:center;justify-content:center;font-family:'Inter',sans-serif;font-weight:800;font-size:.8rem;letter-spacing:0;border-radius:2px}
-.nav-links{display:flex;align-items:center;gap:2.2rem;flex-shrink:0}
+.nav-links{display:flex;align-items:center;gap:1.5rem;flex-shrink:0}
 .nav-links a:not(.nav-donate){font-size:.78rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--text);transition:color .15s ease;position:relative;padding:.4rem 0}
 .nav-links a:not(.nav-donate)::after{content:'';position:absolute;left:0;right:0;bottom:-2px;height:1px;background:var(--primary);transform:scaleX(0);transform-origin:left;transition:transform .25s ease}
 .nav-links a:not(.nav-donate):hover{color:var(--primary)}
@@ -392,6 +392,8 @@ h1,h2,h3,h4{font-family:'Playfair Display',Georgia,serif;font-weight:600;letter-
 .nav-donate{background:var(--primary);color:#fff !important;padding:.7rem 1.4rem;border-radius:999px;font-weight:900;letter-spacing:.06em;text-transform:uppercase;font-size:.82rem;transition:background .2s ease,transform .2s ease;min-height:44px;display:inline-flex;align-items:center}
 .nav-donate:hover{background:var(--primary-dark);color:#fff !important;transform:translateY(-1px)}
 .nav-toggle{display:none;flex-shrink:0;width:44px;height:44px;background:none;border:none;cursor:pointer;flex-direction:column;justify-content:center;align-items:center;gap:5px}
+@media (max-width:1300px){.nav-logo-sub{display:none}}
+@media (max-width:1080px){.nav-links{display:none}.nav-toggle{display:flex}}
 .nav-toggle span{width:24px;height:2px;background:var(--ink);transition:transform .25s ease,opacity .25s ease}
 .nav-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
 .nav-toggle.open span:nth-child(2){opacity:0}
@@ -788,33 +790,46 @@ footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(
   .hero-logo,.hero-sub,.hero-meta,.hero-ctas{opacity:1 !important;transform:none !important;animation:none !important}
   .hero-photo{animation:none !important;transform:none !important}
 }
+.lang-switch{display:inline-flex;align-items:center;gap:.35rem;margin-left:.5rem}
+.lang-btn{background:none;border:0;cursor:pointer;font-family:'Inter',sans-serif;font-weight:700;font-size:.72rem;letter-spacing:.12em;color:var(--text-muted);padding:.2rem .15rem;transition:color .15s ease}
+.lang-btn[aria-pressed="true"]{color:var(--primary)}
+.lang-btn:hover{color:var(--primary)}
+.lang-sep{color:var(--rule);font-size:.72rem}
+.nav-overlay .lang-switch{gap:.6rem}
+.nav-overlay .lang-btn{font-size:1.05rem}
+.nav-overlay .lang-sep{font-size:1.05rem}
 </style>
 </head>
 <body>
 
 <!-- Nav -->
 <header id="nav">
-  <a href="#" class="nav-logo" aria-label="Tyler Haueter for Yakima County Prosecutor · Republican"><span class="nav-logo-name">Haueter</span><span class="nav-logo-sub">Prosecutor &middot; Yakima County</span><span class="nav-logo-badge" aria-hidden="true">R</span></a>
+  <a href="#" class="nav-logo" aria-label="Tyler Haueter for Yakima County Prosecutor · Republican"><span class="nav-logo-name">Haueter</span><span class="nav-logo-sub" data-i18n="nav.logosub">Prosecutor &middot; Yakima County</span><span class="nav-logo-badge" aria-hidden="true">R</span></a>
   <div class="nav-links">
-    <a href="#watch">Watch</a>
-    <a href="#priorities">Priorities</a>
-    <a href="#about">About</a>
-    <a href="#endorsements">Endorsements</a>
-    <a href="#contact">Contact</a>
-    <!-- TODO HANDOFF: Replace # with real WinRed/Anedot donate URL -->
-    <a href="/donate" class="nav-donate">Donate</a>
+    <a href="#watch" data-i18n="nav.watch">Watch</a>
+    <a href="#priorities" data-i18n="nav.priorities">Priorities</a>
+    <a href="#about" data-i18n="nav.about">About</a>
+    <a href="#endorsements" data-i18n="nav.endorsements">Endorsements</a>
+    <a href="#contact" data-i18n="nav.contact">Contact</a>
+    <a href="/donate" class="nav-donate" data-i18n="nav.donate">Donate</a>
+    <div class="lang-switch" role="group" aria-label="Language / Idioma">
+      <button type="button" class="lang-btn" data-lang="en" aria-pressed="true">EN</button><span class="lang-sep" aria-hidden="true">·</span><button type="button" class="lang-btn" data-lang="es" aria-pressed="false">ES</button>
+    </div>
   </div>
   <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
     <span></span><span></span><span></span>
   </button>
 </header>
 <div class="nav-overlay" aria-hidden="true">
-  <a href="#watch">Watch</a>
-  <a href="#priorities">Priorities</a>
-  <a href="#about">About</a>
-  <a href="#endorsements">Endorsements</a>
-  <a href="#contact">Contact</a>
-  <a href="/donate" class="nav-donate" style="margin-top:.6rem">Donate</a>
+  <a href="#watch" data-i18n="nav.watch">Watch</a>
+  <a href="#priorities" data-i18n="nav.priorities">Priorities</a>
+  <a href="#about" data-i18n="nav.about">About</a>
+  <a href="#endorsements" data-i18n="nav.endorsements">Endorsements</a>
+  <a href="#contact" data-i18n="nav.contact">Contact</a>
+  <a href="/donate" class="nav-donate" style="margin-top:.6rem" data-i18n="nav.donate">Donate</a>
+  <div class="lang-switch" role="group" aria-label="Language / Idioma" style="margin-top:1.1rem">
+    <button type="button" class="lang-btn" data-lang="en" aria-pressed="true">EN</button><span class="lang-sep" aria-hidden="true">·</span><button type="button" class="lang-btn" data-lang="es" aria-pressed="false">ES</button>
+  </div>
 </div>
 
 <!-- Hero -->
@@ -827,15 +842,14 @@ footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(
     <h1 class="visually-hidden" style="position:absolute;left:-9999px">Tyler Haueter for Yakima County Prosecutor</h1>
     <div class="hero-text">
       <p class="hero-sub">
-        <span class="hero-tagline"><span>Experience</span><span class="hero-tagline-dot">&bull;</span><span>Integrity</span><span class="hero-tagline-dot">&bull;</span><span>Justice</span></span>
-        <span class="hero-promise">Restored to the people of <em>Yakima County</em>.</span>
+        <span class="hero-tagline"><span data-i18n="hero.exp">Experience</span><span class="hero-tagline-dot">&bull;</span><span data-i18n="hero.int">Integrity</span><span class="hero-tagline-dot">&bull;</span><span data-i18n="hero.jus">Justice</span></span>
+        <span class="hero-promise" data-i18n-html="hero.promise">Restored to the people of <em>Yakima County</em>.</span>
       </p>
-      <div class="hero-meta"><span class="hero-meta-row"><span class="hero-meta-label">Primary</span><span class="hero-meta-date">Aug&nbsp;4,&nbsp;2026</span></span><span class="hero-meta-row"><span class="hero-meta-label">General</span><span class="hero-meta-date">Nov&nbsp;3,&nbsp;2026</span></span></div>
+      <div class="hero-meta"><span class="hero-meta-row"><span class="hero-meta-label" data-i18n="hero.primary">Primary</span><span class="hero-meta-date" data-i18n="hero.primarydate">Aug&nbsp;4,&nbsp;2026</span></span><span class="hero-meta-row"><span class="hero-meta-label" data-i18n="hero.general">General</span><span class="hero-meta-date" data-i18n="hero.generaldate">Nov&nbsp;3,&nbsp;2026</span></span></div>
     </div>
     <div class="hero-ctas">
-      <!-- TODO HANDOFF: real donate URL -->
-      <a href="/donate" class="btn btn-primary">Donate</a>
-      <a href="#volunteer" class="btn btn-outline">Volunteer</a>
+      <a href="/donate" class="btn btn-primary" data-i18n="cta.donate">Donate</a>
+      <a href="#volunteer" class="btn btn-outline" data-i18n="cta.volunteer">Volunteer</a>
     </div>
   </div>
 </section>
@@ -843,8 +857,8 @@ footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(
 <!-- Video -->
 <section class="video-section" id="watch">
   <div class="video-inner">
-    <div class="section-eyebrow fade-up">Meet Tyler</div>
-    <h2 class="section-title fade-up">Hear it in his <em>own words</em>.</h2>
+    <div class="section-eyebrow fade-up" data-i18n="video.eyebrow">Meet Tyler</div>
+    <h2 class="section-title fade-up" data-i18n-html="video.title">Hear it in his <em>own words</em>.</h2>
     <div class="video-grid fade-up">
       <div class="video-item">
         <div class="video-frame">
@@ -854,9 +868,9 @@ footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(
           </video>
         </div>
         <div class="video-caption">
-          <div class="video-kicker">Introduction</div>
-          <h3 class="video-title">Tyler&rsquo;s <em>Story</em></h3>
-          <p class="video-desc">Air Force veteran and father of seven. Who Tyler is, and why he&rsquo;s running for Yakima County Prosecutor.</p>
+          <div class="video-kicker" data-i18n="video.k1">Introduction</div>
+          <h3 class="video-title" data-i18n-html="video.t1">Tyler&rsquo;s <em>Story</em></h3>
+          <p class="video-desc" data-i18n="video.d1">Air Force veteran and father of seven. Who Tyler is, and why he&rsquo;s running for Yakima County Prosecutor.</p>
         </div>
       </div>
       <div class="video-item">
@@ -867,9 +881,9 @@ footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(
           </video>
         </div>
         <div class="video-caption">
-          <div class="video-kicker">Prosecutorial Judgment</div>
-          <h3 class="video-title">Justice and <em>Mercy</em></h3>
-          <p class="video-desc">What years on both sides of the courtroom taught Tyler about a prosecutor&rsquo;s judgment.</p>
+          <div class="video-kicker" data-i18n="video.k2">Prosecutorial Judgment</div>
+          <h3 class="video-title" data-i18n-html="video.t2">Justice and <em>Mercy</em></h3>
+          <p class="video-desc" data-i18n="video.d2">What years on both sides of the courtroom taught Tyler about a prosecutor&rsquo;s judgment.</p>
         </div>
       </div>
     </div>
@@ -879,48 +893,48 @@ footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(
 <!-- Priorities -->
 <section id="priorities">
   <div class="priorities-header">
-    <div class="section-eyebrow fade-up">The Platform</div>
-    <h2 class="section-title fade-up">Five commitments to <em>Yakima County</em>.</h2>
-    <p class="section-lede fade-up">A prosecutor's first job is to keep our community safe and to stand with the people who have been harmed. Here is how Tyler will lead.</p>
+    <div class="section-eyebrow fade-up" data-i18n="pri.eyebrow">The Platform</div>
+    <h2 class="section-title fade-up" data-i18n-html="pri.title">Five commitments to <em>Yakima County</em>.</h2>
+    <p class="section-lede fade-up" data-i18n="pri.lede">A prosecutor's first job is to keep our community safe and to stand with the people who have been harmed. Here is how Tyler will lead.</p>
   </div>
   <div class="priorities-list">
     <article class="priority-row fade-up">
       <div class="priority-num">I</div>
       <div class="priority-content">
-        <h3>Take Down the Gangs.</h3>
-        <p>Yakima County logs roughly 300 gang-related cases every year, and YPD, the Sheriff's Office, and the FBI are standing up a joint gang task force right now. Tyler will partner with that task force from day one, charge gang offenses as the felonies they are, and pursue every available sentencing enhancement. No plea-downs for gang violence.</p>
+        <h3 data-i18n="pri.1h">Take Down the Gangs.</h3>
+        <p data-i18n="pri.1p">Yakima County logs roughly 300 gang-related cases every year, and YPD, the Sheriff's Office, and the FBI are standing up a joint gang task force right now. Tyler will partner with that task force from day one, charge gang offenses as the felonies they are, and pursue every available sentencing enhancement. No plea-downs for gang violence.</p>
       </div>
       <div class="priority-mark">&para;</div>
     </article>
     <article class="priority-row fade-up">
       <div class="priority-num">II</div>
       <div class="priority-content">
-        <h3>End the Soft-on-Crime Plea Deals.</h3>
-        <p>Yakima's violent crime rate is 65% above the national average and climbing. Repeat offenders, violent felons, and habitual criminals will be prosecuted to the full extent of the law, not pled down to a slap on the wrist. The cycle of arrest, plea, release only ends when the prosecutor's office stops feeding it.</p>
+        <h3 data-i18n="pri.2h">End the Soft-on-Crime Plea Deals.</h3>
+        <p data-i18n="pri.2p">Yakima's violent crime rate is 65% above the national average and climbing. Repeat offenders, violent felons, and habitual criminals will be prosecuted to the full extent of the law, not pled down to a slap on the wrist. The cycle of arrest, plea, release only ends when the prosecutor's office stops feeding it.</p>
       </div>
       <div class="priority-mark">&para;</div>
     </article>
     <article class="priority-row fade-up">
       <div class="priority-num">III</div>
       <div class="priority-content">
-        <h3>Stand With Crime Victims.</h3>
-        <p>Tyler personally prosecuted Yakima County's most serious felonies in the Special Assault Unit: sex crimes, child abuse, severe violence. He has stood next to victims and their families in court. As Prosecutor he will keep the Special Assault Unit and Victim/Witness services fully resourced, and victims will be treated like people, not case numbers.</p>
+        <h3 data-i18n="pri.3h">Stand With Crime Victims.</h3>
+        <p data-i18n="pri.3p">Tyler personally prosecuted Yakima County's most serious felonies in the Special Assault Unit: sex crimes, child abuse, severe violence. He has stood next to victims and their families in court. As Prosecutor he will keep the Special Assault Unit and Victim/Witness services fully resourced, and victims will be treated like people, not case numbers.</p>
       </div>
       <div class="priority-mark">&para;</div>
     </article>
     <article class="priority-row fade-up">
       <div class="priority-num">IV</div>
       <div class="priority-content">
-        <h3>Back the Badge.</h3>
-        <p>Officers and deputies put themselves on the line every shift. Tyler will be a Prosecutor who actually backs sound police work, prosecutes the cases law enforcement brings, and treats assaults on officers as the priority crimes they are. No more cases dropped to make the office's numbers look better.</p>
+        <h3 data-i18n="pri.4h">Back the Badge.</h3>
+        <p data-i18n="pri.4p">Officers and deputies put themselves on the line every shift. Tyler will be a Prosecutor who actually backs sound police work, prosecutes the cases law enforcement brings, and treats assaults on officers as the priority crimes they are. No more cases dropped to make the office's numbers look better.</p>
       </div>
       <div class="priority-mark">&para;</div>
     </article>
     <article class="priority-row fade-up">
       <div class="priority-num">V</div>
       <div class="priority-content">
-        <h3>Restore Public Safety on Yakima's Streets.</h3>
-        <p>Property crime, retail theft, vehicle theft, and drug-fueled disorder are hitting Yakima families and small businesses every single day. Tyler will direct prosecution resources where Yakima County actually feels the impact: neighborhoods, schools, downtown, the Lower Valley. Not pet theories from a Seattle conference.</p>
+        <h3 data-i18n="pri.5h">Restore Public Safety on Yakima's Streets.</h3>
+        <p data-i18n="pri.5p">Property crime, retail theft, vehicle theft, and drug-fueled disorder are hitting Yakima families and small businesses every single day. Tyler will direct prosecution resources where Yakima County actually feels the impact: neighborhoods, schools, downtown, the Lower Valley. Not pet theories from a Seattle conference.</p>
       </div>
       <div class="priority-mark">&para;</div>
     </article>
@@ -930,19 +944,19 @@ footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(
 <!-- The Contrast -->
 <section class="contrast" id="contrast">
   <div class="contrast-header">
-    <div class="section-eyebrow">The Contrast</div>
-    <h2><span class="h2-line h2-line-1">Yakima needs a prosecutor.</span><span class="h2-line h2-line-2">Not a former one.</span></h2>
-    <p class="section-lede">Tyler has prosecuted Yakima County's most serious felonies and is in court today. His opponent has not prosecuted a felony case in over a decade.</p>
+    <div class="section-eyebrow" data-i18n="con.eyebrow">The Contrast</div>
+    <h2><span class="h2-line h2-line-1" data-i18n="con.h1">Yakima needs a prosecutor.</span><span class="h2-line h2-line-2" data-i18n="con.h2">Not a former one.</span></h2>
+    <p class="section-lede" data-i18n="con.lede">Tyler has prosecuted Yakima County's most serious felonies and is in court today. His opponent has not prosecuted a felony case in over a decade.</p>
   </div>
 
   <div class="years-strip" aria-hidden="true">
     <div class="year-block year-block--haueter">
-      <div class="year-label">Tyler · In Court</div>
-      <div class="year-num">Today</div>
+      <div class="year-label" data-i18n="con.ylabel1">Tyler · In Court</div>
+      <div class="year-num" data-i18n="con.today">Today</div>
     </div>
     <div class="year-divider"></div>
     <div class="year-block year-block--opp">
-      <div class="year-label">His Opponent · Last Prosecuted</div>
+      <div class="year-label" data-i18n="con.ylabel2">His Opponent · Last Prosecuted</div>
       <div class="year-num">2013</div>
     </div>
   </div>
@@ -950,30 +964,30 @@ footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(
   <div class="contrast-grid">
     <div class="contrast-col contrast-col--haueter">
       <div class="contrast-col-year" aria-hidden="true">
-        <span class="year-label">Tyler · In Court</span>
-        <span class="year-num">Today</span>
+        <span class="year-label" data-i18n="con.ylabel1">Tyler · In Court</span>
+        <span class="year-num" data-i18n="con.today">Today</span>
       </div>
-      <div class="contrast-col-eyebrow">The Active Prosecutor</div>
+      <div class="contrast-col-eyebrow" data-i18n="con.active">The Active Prosecutor</div>
       <div class="contrast-name">Tyler Haueter</div>
       <ul class="contrast-list">
-        <li>Currently prosecuting cases as Assistant City Attorney for the City of Kennewick</li>
-        <li>Served in Yakima County's Special Assault Unit, prosecuting sex crimes, child abuse, and the most serious felonies the office handles</li>
-        <li>Years on the front lines of violent crime prosecution</li>
-        <li>A career prosecutor, not a career administrator</li>
+        <li data-i18n="con.h_li1">Currently prosecuting cases as Assistant City Attorney for the City of Kennewick</li>
+        <li data-i18n="con.h_li2">Served in Yakima County's Special Assault Unit, prosecuting sex crimes, child abuse, and the most serious felonies the office handles</li>
+        <li data-i18n="con.h_li3">Years on the front lines of violent crime prosecution</li>
+        <li data-i18n="con.h_li4">A career prosecutor, not a career administrator</li>
       </ul>
     </div>
     <div class="contrast-col contrast-col--opp">
       <div class="contrast-col-year" aria-hidden="true">
-        <span class="year-label">His Opponent · Last Prosecuted</span>
+        <span class="year-label" data-i18n="con.ylabel2">His Opponent · Last Prosecuted</span>
         <span class="year-num">2013</span>
       </div>
-      <div class="contrast-col-eyebrow">His Opponent</div>
-      <div class="contrast-name">A Decade Out of Felony Practice</div>
+      <div class="contrast-col-eyebrow" data-i18n="con.opp">His Opponent</div>
+      <div class="contrast-name" data-i18n="con.oppname">A Decade Out of Felony Practice</div>
       <ul class="contrast-list">
-        <li>Has not prosecuted a felony case in over a decade</li>
-        <li>Began in District Court handling misdemeanors: DUIs, suspended licenses, marijuana cases</li>
-        <li>Left the Prosecutor's Office in 2013 to open a criminal defense firm</li>
-        <li>Has run a civil legal aid nonprofit since 2019</li>
+        <li data-i18n="con.o_li1">Has not prosecuted a felony case in over a decade</li>
+        <li data-i18n="con.o_li2">Began in District Court handling misdemeanors: DUIs, suspended licenses, marijuana cases</li>
+        <li data-i18n="con.o_li3">Left the Prosecutor's Office in 2013 to open a criminal defense firm</li>
+        <li data-i18n="con.o_li4">Has run a civil legal aid nonprofit since 2019</li>
       </ul>
     </div>
   </div>
@@ -987,31 +1001,31 @@ footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(
       <div class="about-img" aria-hidden="true"></div>
     </div>
     <div class="about-copy fade-up">
-      <div class="section-eyebrow">From the Candidate</div>
-      <h2>An Air Force veteran. A prosecutor. A Yakima County <em>dad of seven</em>.</h2>
-      <p class="lead">Tyler Haueter was raised in Kennewick, Washington as the oldest of four children. After serving a mission in Brazil and meeting his wife Alexis, he enlisted in the United States Air Force, where he spent seven years as a paralegal. That work earned him Paralegal of the Year for the Pacific Region and grew his commitment to the law.</p>
-      <p>After leaving the Air Force, Tyler returned home to Eastern Washington and worked for over three years as the sole criminal investigator for the Yakima County Department of Assigned Counsel, handling felony, misdemeanor, and juvenile cases, before earning his J.D. from the University of Idaho College of Law. He went on to serve in the Yakima County Prosecutor's Office Special Assault Unit, prosecuting the office's most serious felonies. He currently serves as Assistant City Attorney for the City of Kennewick.</p>
-      <p>Tyler and Alexis have been married for nearly twenty years and have seven children. After moving with the Air Force for years, his family put down roots in Yakima County eight years ago. With Prosecutor Joe Brusic stepping aside in 2026, Tyler is coming home to lead the Prosecutor's Office and to keep Yakima County safer, for his family and for yours.</p>
-      <blockquote class="pull-quote">I believe in transparency, integrity, and equal treatment under the law. I am passionate about serving the public as your prosecutor.</blockquote>
+      <div class="section-eyebrow" data-i18n="about.eyebrow">From the Candidate</div>
+      <h2 data-i18n-html="about.h2">An Air Force veteran. A prosecutor. A Yakima County <em>dad of seven</em>.</h2>
+      <p class="lead" data-i18n="about.p1">Tyler Haueter was raised in Kennewick, Washington as the oldest of four children. After serving a mission in Brazil and meeting his wife Alexis, he enlisted in the United States Air Force, where he spent seven years as a paralegal. That work earned him Paralegal of the Year for the Pacific Region and grew his commitment to the law.</p>
+      <p data-i18n="about.p2">After leaving the Air Force, Tyler returned home to Eastern Washington and worked for over three years as the sole criminal investigator for the Yakima County Department of Assigned Counsel, handling felony, misdemeanor, and juvenile cases, before earning his J.D. from the University of Idaho College of Law. He went on to serve in the Yakima County Prosecutor's Office Special Assault Unit, prosecuting the office's most serious felonies. He currently serves as Assistant City Attorney for the City of Kennewick.</p>
+      <p data-i18n="about.p3">Tyler and Alexis have been married for nearly twenty years and have seven children. After moving with the Air Force for years, his family put down roots in Yakima County eight years ago. With Prosecutor Joe Brusic stepping aside in 2026, Tyler is coming home to lead the Prosecutor's Office and to keep Yakima County safer, for his family and for yours.</p>
+      <blockquote class="pull-quote" data-i18n="about.quote">I believe in transparency, integrity, and equal treatment under the law. I am passionate about serving the public as your prosecutor.</blockquote>
     </div>
   </div>
 
   <ul class="credentials-strip fade-up">
     <li>
-      <span class="cred-label">Current</span>
-      <span class="cred-value">Assistant City Attorney, City of Kennewick</span>
+      <span class="cred-label" data-i18n="about.cl1">Current</span>
+      <span class="cred-value" data-i18n="about.cv1">Assistant City Attorney, City of Kennewick</span>
     </li>
     <li>
-      <span class="cred-label">Prior</span>
-      <span class="cred-value">SAU Prosecutor, Yakima County</span>
+      <span class="cred-label" data-i18n="about.cl2">Prior</span>
+      <span class="cred-value" data-i18n="about.cv2">SAU Prosecutor, Yakima County</span>
     </li>
     <li>
-      <span class="cred-label">Service</span>
-      <span class="cred-value">U.S. Air Force Veteran</span>
+      <span class="cred-label" data-i18n="about.cl3">Service</span>
+      <span class="cred-value" data-i18n="about.cv3">U.S. Air Force Veteran</span>
     </li>
     <li>
-      <span class="cred-label">Education</span>
-      <span class="cred-value">J.D., University of Idaho College of Law</span>
+      <span class="cred-label" data-i18n="about.cl4">Education</span>
+      <span class="cred-value" data-i18n="about.cv4">J.D., University of Idaho College of Law</span>
     </li>
   </ul>
 </section>
@@ -1019,28 +1033,28 @@ footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(
 <!-- Record . real cases -->
 <section class="record">
   <div class="record-inner">
-    <div class="section-eyebrow">The Record</div>
-    <h2 class="record-headline fade-up">Real cases. <em>Real convictions</em>.</h2>
-    <p class="record-lede fade-up">Tyler hasn't just talked about prosecuting violent crime. He's done it.</p>
+    <div class="section-eyebrow" data-i18n="rec.eyebrow">The Record</div>
+    <h2 class="record-headline fade-up" data-i18n-html="rec.headline">Real cases. <em>Real convictions</em>.</h2>
+    <p class="record-lede fade-up" data-i18n="rec.lede">Tyler hasn't just talked about prosecuting violent crime. He's done it.</p>
 
     <div class="record-cases">
       <article class="case-card fade-up">
-        <div class="case-num">23<span class="case-num-unit">+ yrs</span></div>
-        <div class="case-meta">November 2024 &middot; Naches</div>
+        <div class="case-num">23<span class="case-num-unit" data-i18n="rec.unit1">+ yrs</span></div>
+        <div class="case-meta" data-i18n="rec.meta1">November 2024 &middot; Naches</div>
         <h3 class="case-title">State v. Randy Razey</h3>
-        <p class="case-desc">Murder conviction. Tyler successfully prosecuted Randy Razey for the killing of his father in Naches, securing a sentence of more than 23 years in prison.</p>
+        <p class="case-desc" data-i18n="rec.desc1">Murder conviction. Tyler successfully prosecuted Randy Razey for the killing of his father in Naches, securing a sentence of more than 23 years in prison.</p>
       </article>
       <article class="case-card fade-up">
-        <div class="case-num">20<span class="case-num-unit">to life</span></div>
-        <div class="case-meta">2025 &middot; Yakima County</div>
-        <h3 class="case-title">Multi-Count Sex Crime Convictions</h3>
-        <p class="case-desc">Jury convictions on Child Molestation, Incest, and Indecent Liberties where the victim was incapable of consent. Indeterminate sentence of 20 years to life.</p>
+        <div class="case-num">20<span class="case-num-unit" data-i18n="rec.unit2">to life</span></div>
+        <div class="case-meta" data-i18n="rec.meta2">2025 &middot; Yakima County</div>
+        <h3 class="case-title" data-i18n="rec.title2">Multi-Count Sex Crime Convictions</h3>
+        <p class="case-desc" data-i18n="rec.desc2">Jury convictions on Child Molestation, Incest, and Indecent Liberties where the victim was incapable of consent. Indeterminate sentence of 20 years to life.</p>
       </article>
       <article class="case-card fade-up">
         <div class="case-num"><svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg></div>
-        <div class="case-meta">2025 &middot; Yakima County</div>
-        <h3 class="case-title">Child Molestation Conviction</h3>
-        <p class="case-desc">Successful prosecution of a defendant charged with Child Molestation. Another conviction protecting Yakima County's children.</p>
+        <div class="case-meta" data-i18n="rec.meta2">2025 &middot; Yakima County</div>
+        <h3 class="case-title" data-i18n="rec.title3">Child Molestation Conviction</h3>
+        <p class="case-desc" data-i18n="rec.desc3">Successful prosecution of a defendant charged with Child Molestation. Another conviction protecting Yakima County's children.</p>
       </article>
     </div>
   </div>
@@ -1048,38 +1062,38 @@ footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(
 
 <!-- Endorsements -->
 <section class="endorsements" id="endorsements">
-  <div class="section-eyebrow fade-up">Endorsements</div>
-  <h2 class="section-title fade-up" style="margin-left:auto;margin-right:auto;text-align:center">Standing with Tyler.</h2>
+  <div class="section-eyebrow fade-up" data-i18n="end.eyebrow">Endorsements</div>
+  <h2 class="section-title fade-up" style="margin-left:auto;margin-right:auto;text-align:center" data-i18n="end.title">Standing with Tyler.</h2>
 
   <div class="endorse-orgs fade-up">
-    <div class="endorse-orgs-label">Endorsed By</div>
+    <div class="endorse-orgs-label" data-i18n="end.by">Endorsed By</div>
     <div class="endorse-orgs-row">
       <div class="org-card">
         <div class="org-logo-wrap"><img src="ycrp-logo.png?v=1" alt="Yakima County Republican Party" class="org-logo" width="96" height="96"></div>
-        <span class="org-name">Yakima County Republican Party</span>
+        <span class="org-name" data-i18n="end.org1">Yakima County Republican Party</span>
       </div>
       <div class="org-card">
         <div class="org-logo-wrap"><img src="lavoz-logo.png?v=1" alt="La Voz, El Portavoz de la Comunidad Latina" class="org-logo" width="298" height="96"></div>
-        <span class="org-name">La Voz &middot; Latino Community Newspaper</span>
+        <span class="org-name" data-i18n="end.org2">La Voz &middot; Latino Community Newspaper</span>
       </div>
     </div>
   </div>
 
   <div class="endorse-grid fade-up">
-    <div class="endorse-list" id="endorseList" data-empty="Endorsements coming soon. Be the first to share yours.">
-      <p class="endorse-loading">Loading endorsements&hellip;</p>
+    <div class="endorse-list" id="endorseList" data-i18n-empty="end.empty" data-empty="Endorsements coming soon. Be the first to share yours.">
+      <p class="endorse-loading" data-i18n="end.loading">Loading endorsements&hellip;</p>
     </div>
 
     <div class="endorse-form-wrap">
-    <h3 class="endorse-form-title">Endorse Tyler</h3>
-    <p class="endorse-form-lede">Share why you support Tyler Haueter for Yakima County Prosecutor. Submissions are reviewed before publishing.</p>
+    <h3 class="endorse-form-title" data-i18n="end.formtitle">Endorse Tyler</h3>
+    <p class="endorse-form-lede" data-i18n="end.formlede">Share why you support Tyler Haueter for Yakima County Prosecutor. Submissions are reviewed before publishing.</p>
     <form id="endorseForm" class="endorse-form" action="https://tylerforyakima-form.matt-14c.workers.dev/endorsements/submit" method="POST">
       <input type="text" name="website" tabindex="-1" autocomplete="off" style="position:absolute;left:-10000px;width:1px;height:1px;opacity:0" aria-hidden="true">
-      <input type="text" name="name" placeholder="Your full name" required>
-      <input type="text" name="title" placeholder="Title or affiliation (optional)">
-      <input type="email" name="email" placeholder="Email (optional, for verification)">
-      <textarea name="quote" placeholder="Why are you endorsing Tyler?" rows="4" required maxlength="1200"></textarea>
-      <button type="submit" class="btn btn-primary" style="background:var(--primary);color:#fff;align-self:center">Submit Endorsement</button>
+      <input type="text" name="name" placeholder="Your full name" data-i18n-ph="end.ph_name" required>
+      <input type="text" name="title" placeholder="Title or affiliation (optional)" data-i18n-ph="end.ph_title">
+      <input type="email" name="email" placeholder="Email (optional, for verification)" data-i18n-ph="end.ph_email">
+      <textarea name="quote" placeholder="Why are you endorsing Tyler?" data-i18n-ph="end.ph_quote" rows="4" required maxlength="1200"></textarea>
+      <button type="submit" class="btn btn-primary" style="background:var(--primary);color:#fff;align-self:center" data-i18n="end.submit">Submit Endorsement</button>
     </form>
     </div>
   </div>
@@ -1087,48 +1101,46 @@ footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(
 
 <!-- Donate banner -->
 <section class="donate-banner" id="donate">
-  <span class="eyebrow-light">Stand With Tyler</span>
-  <h2>Help us win this <em>seat</em> for Yakima County.</h2>
-  <p>Every contribution funds yard signs, mailers, and the work it takes to win.</p>
-  <!-- TODO HANDOFF: real donate URL (WinRed / Anedot) -->
-  <a href="/donate" class="btn btn-primary">Donate</a>
+  <span class="eyebrow-light" data-i18n="db.eyebrow">Stand With Tyler</span>
+  <h2 data-i18n-html="db.h2">Help us win this <em>seat</em> for Yakima County.</h2>
+  <p data-i18n="db.p">Every contribution funds yard signs, mailers, and the work it takes to win.</p>
+  <a href="/donate" class="btn btn-primary" data-i18n="cta.donate">Donate</a>
 </section>
 
 <!-- Volunteer + Contact -->
 <section class="engage" id="contact">
   <div class="engage-grid">
     <div class="engage-col fade-up" id="volunteer">
-      <div class="section-eyebrow">Get Involved</div>
-      <h3>Join the team.</h3>
-      <p>Sign up to door-knock, phone bank, host a sign, or help host an event. We'll be in touch.</p>
+      <div class="section-eyebrow" data-i18n="eng.eyebrow">Get Involved</div>
+      <h3 data-i18n="eng.h3">Join the team.</h3>
+      <p data-i18n="eng.p">Sign up to door-knock, phone bank, host a sign, or help host an event. We'll be in touch.</p>
       <form action="https://tylerforyakima-form.matt-14c.workers.dev" method="POST">
         <input type="text" name="website" tabindex="-1" autocomplete="off" style="position:absolute;left:-10000px;width:1px;height:1px;opacity:0" aria-hidden="true">
-        <input type="text" name="name" placeholder="Full name" required>
-        <input type="email" name="email" placeholder="Email" required>
-        <input type="tel" name="phone" placeholder="Phone">
+        <input type="text" name="name" placeholder="Full name" data-i18n-ph="eng.ph_name" required>
+        <input type="email" name="email" placeholder="Email" data-i18n-ph="eng.ph_email" required>
+        <input type="tel" name="phone" placeholder="Phone" data-i18n-ph="eng.ph_phone">
         <div class="checks">
-          <label><input type="checkbox" name="interest" value="canvass"> Door-knocking</label>
-          <label><input type="checkbox" name="interest" value="phones"> Phone banking</label>
-          <label><input type="checkbox" name="interest" value="sign"> Host a yard sign</label>
-          <label><input type="checkbox" name="interest" value="event"> Host an event</label>
+          <label><input type="checkbox" name="interest" value="canvass"> <span data-i18n="eng.c1">Door-knocking</span></label>
+          <label><input type="checkbox" name="interest" value="phones"> <span data-i18n="eng.c2">Phone banking</span></label>
+          <label><input type="checkbox" name="interest" value="sign"> <span data-i18n="eng.c3">Host a yard sign</span></label>
+          <label><input type="checkbox" name="interest" value="event"> <span data-i18n="eng.c4">Host an event</span></label>
         </div>
-        <button type="submit" class="btn btn-primary" style="background:var(--primary);color:#fff;align-self:flex-start">Sign Me Up</button>
+        <button type="submit" class="btn btn-primary" style="background:var(--primary);color:#fff;align-self:flex-start" data-i18n="eng.submit">Sign Me Up</button>
       </form>
     </div>
     <div class="engage-col fade-up">
-      <div class="section-eyebrow">Contact</div>
-      <h3>Get in touch.</h3>
-      <p>Questions, press inquiries, endorsements, or want to get coffee with Tyler? Reach out.</p>
+      <div class="section-eyebrow" data-i18n="con2.eyebrow">Contact</div>
+      <h3 data-i18n="con2.h3">Get in touch.</h3>
+      <p data-i18n="con2.p">Questions, press inquiries, endorsements, or want to get coffee with Tyler? Reach out.</p>
       <div class="contact-block">
-        <strong>Email</strong>
-        <!-- TODO HANDOFF: real campaign email -->
+        <strong data-i18n="con2.email">Email</strong>
         <a href="mailto:info@tylerforyakima.com">info@tylerforyakima.com</a>
         <strong>Facebook</strong>
         <a href="https://www.facebook.com/tylerforyakima" target="_blank" rel="noopener">facebook.com/tylerforyakima</a>
-        <strong>Mailing</strong>
+        <strong data-i18n="con2.mailing">Mailing</strong>
         PO Box 9403<br>Yakima, WA 98909
-        <strong>Election</strong>
-        Primary · Aug 4, 2026<br>General · Nov 3, 2026
+        <strong data-i18n="con2.election">Election</strong>
+        <span data-i18n-html="con2.electiondates">Primary · Aug 4, 2026<br>General · Nov 3, 2026</span>
       </div>
     </div>
   </div>
@@ -1145,27 +1157,70 @@ footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(
 <!-- Footer + Compliance -->
 <footer>
   <div class="footer-inner">
-    <div class="footer-brand"><span class="name">Haueter</span> <em>for Yakima County</em></div>
+    <div class="footer-brand"><span class="name">Haueter</span> <em data-i18n="foot.for">for Yakima County</em></div>
     <ul class="footer-links">
-      <li><a href="#priorities">Priorities</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#endorsements">Endorsements</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#priorities" data-i18n="nav.priorities">Priorities</a></li>
+      <li><a href="#about" data-i18n="nav.about">About</a></li>
+      <li><a href="#endorsements" data-i18n="nav.endorsements">Endorsements</a></li>
+      <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
       <li><a href="https://www.facebook.com/tylerforyakima" target="_blank" rel="noopener">Facebook</a></li>
-      <li><a href="/donate">Donate</a></li>
+      <li><a href="/donate" data-i18n="nav.donate">Donate</a></li>
     </ul>
   </div>
-  <div class="compliance">
+  <div class="compliance" data-i18n-html="foot.compliance">
     Paid for by Tyler for Yakima. Reporting to the Washington State <a href="https://www.pdc.wa.gov/" style="text-decoration:underline">Public Disclosure Commission</a>.<br>
     © 2026 Tyler Haueter for Yakima County Prosecutor. All rights reserved.
   </div>
   <div id="license" class="compliance" style="margin-top:1.4rem;font-size:.72rem;opacity:.55;max-width:780px;margin-left:auto;margin-right:auto;line-height:1.7">
-    <strong style="display:block;margin-bottom:.35rem;letter-spacing:.18em;text-transform:uppercase;font-size:.66rem;opacity:.85">Image &amp; Content License</strong>
-    All photos, the campaign logo, and copy on this site are © 2026 Tyler for Yakima. Reuse by news media for editorial coverage of the 2026 Yakima County Prosecutor race is permitted with attribution to “Tyler for Yakima.” All other use requires written permission — contact <a href="mailto:info@tylerforyakima.com" style="text-decoration:underline">info@tylerforyakima.com</a>.
+    <strong style="display:block;margin-bottom:.35rem;letter-spacing:.18em;text-transform:uppercase;font-size:.66rem;opacity:.85" data-i18n="foot.licensehead">Image &amp; Content License</strong>
+    <span data-i18n-html="foot.licensebody">All photos, the campaign logo, and copy on this site are © 2026 Tyler for Yakima. Reuse by news media for editorial coverage of the 2026 Yakima County Prosecutor race is permitted with attribution to “Tyler for Yakima.” All other use requires written permission — contact <a href="mailto:info@tylerforyakima.com" style="text-decoration:underline">info@tylerforyakima.com</a>.</span>
   </div>
 </footer>
 
 <script>
+// ---- Bilingual (EN/ES) ----
+const I18N = { es: {
+  "nav.logosub":"Fiscal · Condado de Yakima","nav.watch":"Videos","nav.priorities":"Prioridades","nav.about":"Biografía","nav.endorsements":"Apoyos","nav.contact":"Contacto","nav.donate":"Donar",
+  "hero.exp":"Experiencia","hero.int":"Integridad","hero.jus":"Justicia","hero.promise":"Restaurada para la gente del <em>Condado de Yakima</em>.","hero.primary":"Primaria","hero.primarydate":"4 de agosto de 2026","hero.general":"General","hero.generaldate":"3 de noviembre de 2026",
+  "cta.donate":"Donar","cta.volunteer":"Ser Voluntario",
+  "video.eyebrow":"Conoce a Tyler","video.title":"Escúchalo en sus <em>propias palabras</em>.","video.k1":"Introducción","video.t1":"La <em>historia</em> de Tyler","video.d1":"Veterano de la Fuerza Aérea y padre de siete hijos. Quién es Tyler y por qué se postula para Fiscal del Condado de Yakima.","video.k2":"Criterio Fiscal","video.t2":"Justicia y <em>Misericordia</em>","video.d2":"Lo que años en ambos lados de la sala del tribunal le enseñaron a Tyler sobre el criterio de un fiscal.",
+  "pri.eyebrow":"La Plataforma","pri.title":"Cinco compromisos con el <em>Condado de Yakima</em>.","pri.lede":"El primer deber de un fiscal es mantener segura a nuestra comunidad y estar del lado de quienes han sido perjudicados. Así liderará Tyler.",
+  "pri.1h":"Acabar con las Pandillas.","pri.1p":"El Condado de Yakima registra alrededor de 300 casos relacionados con pandillas cada año, y la Policía de Yakima, la Oficina del Sheriff y el FBI están formando una fuerza conjunta contra las pandillas en este momento. Tyler colaborará con esa fuerza desde el primer día, procesará los delitos de pandillas como los delitos graves que son y buscará todo aumento de condena disponible. Sin acuerdos rebajados para la violencia de pandillas.",
+  "pri.2h":"Terminar con los Acuerdos Blandos ante el Crimen.","pri.2p":"La tasa de crimen violento de Yakima está un 65% por encima del promedio nacional y sigue subiendo. Los reincidentes, los delincuentes violentos y los criminales habituales serán procesados con todo el peso de la ley, no rebajados a una simple palmada en la mano. El ciclo de arresto, acuerdo y liberación solo termina cuando la oficina del fiscal deja de alimentarlo.",
+  "pri.3h":"Apoyar a las Víctimas del Crimen.","pri.3p":"Tyler procesó personalmente los delitos graves más serios del Condado de Yakima en la Unidad de Agresiones Especiales: delitos sexuales, abuso infantil y violencia grave. Ha estado junto a las víctimas y sus familias en los tribunales. Como Fiscal, mantendrá la Unidad de Agresiones Especiales y los servicios para Víctimas y Testigos con todos sus recursos, y las víctimas serán tratadas como personas, no como números de caso.",
+  "pri.4h":"Respaldar a la Policía.","pri.4p":"Los oficiales y agentes arriesgan su vida en cada turno. Tyler será un Fiscal que de verdad respalda el buen trabajo policial, procesa los casos que trae la policía y trata las agresiones contra oficiales como los delitos prioritarios que son. No más casos abandonados para que las cifras de la oficina se vean mejor.",
+  "pri.5h":"Restaurar la Seguridad Pública en las Calles de Yakima.","pri.5p":"El crimen contra la propiedad, el robo en comercios, el robo de vehículos y el desorden causado por las drogas golpean a las familias y a los pequeños negocios de Yakima todos los días. Tyler dirigirá los recursos de la fiscalía adonde el Condado de Yakima realmente siente el impacto: los vecindarios, las escuelas, el centro y el Valle Bajo. No teorías de moda de una conferencia en Seattle.",
+  "con.eyebrow":"El Contraste","con.h1":"Yakima necesita un fiscal.","con.h2":"No un exfiscal.","con.lede":"Tyler ha procesado los delitos graves más serios del Condado de Yakima y está en los tribunales hoy. Su oponente no ha procesado un caso de delito grave en más de una década.",
+  "con.ylabel1":"Tyler · En el Tribunal","con.today":"Hoy","con.ylabel2":"Su Oponente · Última vez que ejerció","con.active":"El Fiscal en Ejercicio",
+  "con.h_li1":"Actualmente procesa casos como Fiscal Adjunto de la Ciudad de Kennewick","con.h_li2":"Sirvió en la Unidad de Agresiones Especiales del Condado de Yakima, procesando delitos sexuales, abuso infantil y los delitos graves más serios que maneja la oficina","con.h_li3":"Años en la primera línea del procesamiento del crimen violento","con.h_li4":"Un fiscal de carrera, no un administrador de carrera",
+  "con.opp":"Su Oponente","con.oppname":"Una Década Fuera de la Práctica Penal","con.o_li1":"No ha procesado un caso de delito grave en más de una década","con.o_li2":"Comenzó en el Tribunal de Distrito manejando faltas: casos de conducir ebrio, licencias suspendidas y marihuana","con.o_li3":"Dejó la Oficina del Fiscal en 2013 para abrir un bufete de defensa penal","con.o_li4":"Dirige una organización sin fines de lucro de asistencia legal civil desde 2019",
+  "about.eyebrow":"Del Candidato","about.h2":"Un veterano de la Fuerza Aérea. Un fiscal. Un <em>padre de siete</em> del Condado de Yakima.","about.p1":"Tyler Haueter se crió en Kennewick, Washington, como el mayor de cuatro hermanos. Después de servir una misión en Brasil y conocer a su esposa Alexis, se alistó en la Fuerza Aérea de los Estados Unidos, donde pasó siete años como asistente legal. Ese trabajo le valió el reconocimiento de Asistente Legal del Año de la Región del Pacífico y afianzó su compromiso con la ley.","about.p2":"Tras dejar la Fuerza Aérea, Tyler regresó a su hogar en el este de Washington y trabajó por más de tres años como el único investigador criminal del Departamento de Abogados Asignados del Condado de Yakima, manejando casos de delitos graves, faltas y juveniles, antes de obtener su Doctorado en Derecho (J.D.) de la Facultad de Derecho de la Universidad de Idaho. Luego sirvió en la Unidad de Agresiones Especiales de la Oficina del Fiscal del Condado de Yakima, procesando los delitos graves más serios de la oficina. Actualmente se desempeña como Fiscal Adjunto de la Ciudad de Kennewick.","about.p3":"Tyler y Alexis llevan casi veinte años casados y tienen siete hijos. Después de mudarse durante años con la Fuerza Aérea, su familia echó raíces en el Condado de Yakima hace ocho años. Con el Fiscal Joe Brusic haciéndose a un lado en 2026, Tyler regresa a casa para dirigir la Oficina del Fiscal y mantener el Condado de Yakima más seguro, para su familia y para la suya.","about.quote":"Creo en la transparencia, la integridad y el trato igualitario ante la ley. Me apasiona servir al público como su fiscal.",
+  "about.cl1":"Actual","about.cv1":"Fiscal Adjunto, Ciudad de Kennewick","about.cl2":"Anterior","about.cv2":"Fiscal de la Unidad de Agresiones Especiales, Condado de Yakima","about.cl3":"Servicio","about.cv3":"Veterano de la Fuerza Aérea de EE. UU.","about.cl4":"Educación","about.cv4":"Doctorado en Derecho (J.D.), Facultad de Derecho de la Universidad de Idaho",
+  "rec.eyebrow":"El Historial","rec.headline":"Casos reales. <em>Condenas reales</em>.","rec.lede":"Tyler no solo ha hablado de procesar el crimen violento. Lo ha hecho.","rec.unit1":"+ años","rec.meta1":"Noviembre de 2024 · Naches","rec.desc1":"Condena por asesinato. Tyler procesó con éxito a Randy Razey por matar a su padre en Naches, logrando una sentencia de más de 23 años de prisión.","rec.unit2":"a perpetua","rec.meta2":"2025 · Condado de Yakima","rec.title2":"Condenas por Múltiples Delitos Sexuales","rec.desc2":"Condenas por jurado por Abuso Sexual Infantil, Incesto y Libertades Indecentes cuando la víctima era incapaz de consentir. Sentencia indeterminada de 20 años a cadena perpetua.","rec.title3":"Condena por Abuso Sexual Infantil","rec.desc3":"Procesamiento exitoso de un acusado por Abuso Sexual Infantil. Otra condena que protege a los niños del Condado de Yakima.",
+  "end.eyebrow":"Apoyos","end.title":"Junto a Tyler.","end.by":"Respaldado Por","end.org1":"Partido Republicano del Condado de Yakima","end.org2":"La Voz · Periódico de la Comunidad Latina","end.empty":"Los apoyos llegarán pronto. Sea el primero en compartir el suyo.","end.loading":"Cargando apoyos…","end.formtitle":"Apoya a Tyler","end.formlede":"Comparta por qué apoya a Tyler Haueter para Fiscal del Condado de Yakima. Las publicaciones se revisan antes de publicarse.","end.ph_name":"Su nombre completo","end.ph_title":"Cargo o afiliación (opcional)","end.ph_email":"Correo electrónico (opcional, para verificación)","end.ph_quote":"¿Por qué apoya a Tyler?","end.submit":"Enviar Apoyo","endorse.readmore":"Leer más","endorse.showless":"Mostrar menos",
+  "db.eyebrow":"Apoya a Tyler","db.h2":"Ayúdanos a ganar este <em>cargo</em> para el Condado de Yakima.","db.p":"Cada contribución financia letreros de jardín, correos y el trabajo que se necesita para ganar.",
+  "eng.eyebrow":"Participa","eng.h3":"Únete al equipo.","eng.p":"Regístrate para tocar puertas, hacer llamadas, poner un letrero o ayudar a organizar un evento. Nos pondremos en contacto.","eng.ph_name":"Nombre completo","eng.ph_email":"Correo electrónico","eng.ph_phone":"Teléfono","eng.c1":"Tocar puertas","eng.c2":"Llamadas telefónicas","eng.c3":"Poner un letrero","eng.c4":"Organizar un evento","eng.submit":"Inscribirme",
+  "con2.eyebrow":"Contacto","con2.h3":"Contáctanos.","con2.p":"¿Preguntas, consultas de prensa, apoyos o quieres tomar un café con Tyler? Comunícate.","con2.email":"Correo","con2.mailing":"Correo postal","con2.election":"Elección","con2.electiondates":"Primaria · 4 de agosto de 2026<br>General · 3 de noviembre de 2026",
+  "foot.for":"para el Condado de Yakima","foot.compliance":"Pagado por Tyler for Yakima. Se reporta a la <a href=\"https://www.pdc.wa.gov/\" style=\"text-decoration:underline\">Comisión de Divulgación Pública</a> del Estado de Washington.<br>© 2026 Tyler Haueter para Fiscal del Condado de Yakima. Todos los derechos reservados.","foot.licensehead":"Licencia de Imágenes y Contenido","foot.licensebody":"Todas las fotos, el logotipo de la campaña y el texto de este sitio son © 2026 Tyler for Yakima. Los medios de comunicación pueden reutilizarlos para la cobertura editorial de la contienda por Fiscal del Condado de Yakima 2026 con atribución a “Tyler for Yakima.” Cualquier otro uso requiere permiso por escrito. Comuníquese con <a href=\"mailto:info@tylerforyakima.com\" style=\"text-decoration:underline\">info@tylerforyakima.com</a>."
+}};
+const I18N_EN_DYN = { "endorse.readmore":"Read more","endorse.showless":"Show less" };
+function t(k){ return (window.__lang==='es' && I18N.es[k]!=null) ? I18N.es[k] : (I18N_EN_DYN[k]!=null ? I18N_EN_DYN[k] : k); }
+function setLang(lang){
+  const dict = lang==='es' ? I18N.es : null;
+  document.documentElement.lang = lang;
+  document.documentElement.setAttribute('data-lang', lang);
+  document.querySelectorAll('[data-i18n]').forEach(el=>{ const k=el.getAttribute('data-i18n'); if(el.__en==null) el.__en=el.textContent; el.textContent=(dict&&dict[k]!=null)?dict[k]:el.__en; });
+  document.querySelectorAll('[data-i18n-html]').forEach(el=>{ const k=el.getAttribute('data-i18n-html'); if(el.__enHtml==null) el.__enHtml=el.innerHTML; el.innerHTML=(dict&&dict[k]!=null)?dict[k]:el.__enHtml; });
+  document.querySelectorAll('[data-i18n-ph]').forEach(el=>{ const k=el.getAttribute('data-i18n-ph'); if(el.__enPh==null) el.__enPh=el.getAttribute('placeholder')||''; el.setAttribute('placeholder',(dict&&dict[k]!=null)?dict[k]:el.__enPh); });
+  document.querySelectorAll('[data-i18n-empty]').forEach(el=>{ const k=el.getAttribute('data-i18n-empty'); if(el.__enEmpty==null) el.__enEmpty=el.getAttribute('data-empty')||''; el.setAttribute('data-empty',(dict&&dict[k]!=null)?dict[k]:el.__enEmpty); });
+  document.querySelectorAll('.endorse-readmore').forEach(btn=>{ btn.textContent = btn.getAttribute('aria-expanded')==='true' ? t('endorse.showless') : t('endorse.readmore'); });
+  document.querySelectorAll('.lang-btn').forEach(b=>b.setAttribute('aria-pressed', b.dataset.lang===lang ? 'true':'false'));
+  window.__lang = lang;
+  try{ localStorage.setItem('lang', lang); }catch(e){}
+}
+document.querySelectorAll('.lang-btn').forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.lang)));
+(function(){ let s=null; try{ s=localStorage.getItem('lang'); }catch(e){} const auto=((navigator.language||navigator.userLanguage||'')+'').toLowerCase().indexOf('es')===0?'es':'en'; setLang(s||auto); })();
+
 // Nav scroll state
 const nav = document.getElementById('nav');
 window.addEventListener('scroll', () => {
@@ -1235,7 +1290,7 @@ if (contrastEl) {
           </div>
         </div>
         <blockquote>${esc(e.quote)}</blockquote>
-        <button type="button" class="endorse-readmore" aria-expanded="false">Read more</button>
+        <button type="button" class="endorse-readmore" aria-expanded="false">${t('endorse.readmore')}</button>
       </article>`).join('');
     requestAnimationFrame(() => {
       list.querySelectorAll('.endorse-card').forEach(card => {
@@ -1244,7 +1299,7 @@ if (contrastEl) {
         if (bq.scrollHeight > bq.clientHeight + 1) card.dataset.truncated = 'true';
         btn.addEventListener('click', () => {
           const open = bq.classList.toggle('expanded');
-          btn.textContent = open ? 'Show less' : 'Read more';
+          btn.textContent = open ? t('endorse.showless') : t('endorse.readmore');
           btn.setAttribute('aria-expanded', open ? 'true' : 'false');
         });
       });
